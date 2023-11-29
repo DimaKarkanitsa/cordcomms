@@ -1,0 +1,652 @@
+.main-page {
+  background-color: #e7e6e0;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  width: 100%;
+}
+
+.main-page .div {
+  background-color: #e7e6e0;
+  overflow: hidden;
+  width: 1920px;
+  height: 3503px;
+  position: relative;
+}
+
+.main-page .overlap {
+  position: absolute;
+  width: 1920px;
+  height: 4003px;
+  top: 0;
+  left: 0;
+}
+
+.main-page .rectangle {
+  height: 504px;
+  top: 1188px;
+  background-color: #4c4a4d;
+  opacity: 0.05;
+  position: absolute;
+  width: 1342px;
+  left: 289px;
+}
+
+.main-page .ellipse {
+  position: absolute;
+  width: 60px;
+  height: 60px;
+  top: 1054px;
+  left: 130px;
+  background-color: #b6c5d3;
+  border-radius: 30px;
+}
+
+.main-page .ellipse-2 {
+  position: absolute;
+  width: 40px;
+  height: 40px;
+  top: 1879px;
+  left: 1740px;
+  background-color: #4c4a4d1a;
+  border-radius: 20px;
+}
+
+.main-page .img {
+  position: absolute;
+  width: 830px;
+  height: 830px;
+  top: 150px;
+  left: 990px;
+}
+
+.main-page .noise {
+  position: absolute;
+  width: 1920px;
+  height: 983px;
+  top: 2520px;
+  left: 0;
+}
+
+.main-page .noise-2 {
+  top: 1260px;
+  position: absolute;
+  width: 1920px;
+  height: 1260px;
+  left: 0;
+}
+
+.main-page .noise-3 {
+  top: 0;
+  position: absolute;
+  width: 1920px;
+  height: 1260px;
+  left: 0;
+}
+
+.main-page .ellipse-3 {
+  position: absolute;
+  width: 600px;
+  height: 600px;
+  top: 380px;
+  left: 900px;
+  background-color: #cfdae3;
+  border-radius: 300px;
+  filter: blur(120px);
+}
+
+.main-page .ellipse-4 {
+  position: absolute;
+  width: 720px;
+  height: 720px;
+  top: 2269px;
+  left: 160px;
+  background-color: #ffffff;
+  border-radius: 360px;
+  filter: blur(160px);
+}
+
+.main-page .group {
+  position: absolute;
+  width: 1360px;
+  height: 546px;
+  top: 248px;
+  left: 285px;
+}
+
+.main-page .overlap-group {
+  position: relative;
+  width: 1350px;
+  height: 546px;
+}
+
+.main-page .overlap-group-2 {
+  position: absolute;
+  width: 1350px;
+  height: 546px;
+  top: 0;
+  left: 0;
+}
+
+.main-page .text-wrapper {
+  position: absolute;
+  top: 168px;
+  left: 325px;
+  font-family: "Cormorant Garamond", Helvetica;
+  font-weight: 400;
+  color: #000000;
+  font-size: 180px;
+  letter-spacing: 0;
+  line-height: normal;
+}
+
+.main-page .text-wrapper-2 {
+  position: absolute;
+  top: 328px;
+  left: 0;
+  font-family: "Cormorant Garamond", Helvetica;
+  font-weight: 400;
+  color: #000000;
+  font-size: 180px;
+  letter-spacing: 0;
+  line-height: normal;
+}
+
+.main-page .text-wrapper-3 {
+  position: absolute;
+  top: 0;
+  left: 0;
+  font-family: "Cormorant Garamond", Helvetica;
+  font-weight: 400;
+  color: #000000;
+  font-size: 180px;
+  letter-spacing: 0;
+  line-height: normal;
+}
+
+.main-page .we-are-committed-to {
+  position: absolute;
+  top: 252px;
+  left: 4px;
+  opacity: 0.5;
+  font-family: "Brandon Grotesque-Regular", Helvetica;
+  font-weight: 400;
+  color: #4c4a4d;
+  font-size: 24px;
+  letter-spacing: 0;
+  line-height: 30px;
+}
+
+.main-page .we-work-with {
+  position: absolute;
+  top: 64px;
+  left: 575px;
+  opacity: 0.5;
+  font-family: "Brandon Grotesque-Regular", Helvetica;
+  font-weight: 400;
+  color: #4c4a4d;
+  font-size: 24px;
+  letter-spacing: 0;
+  line-height: 30px;
+}
+
+.main-page .vector {
+  position: absolute;
+  width: 1px;
+  height: 222px;
+  top: 926px;
+  left: 960px;
+}
+
+.main-page .vector-2 {
+  position: absolute;
+  width: 380px;
+  height: 1px;
+  top: 356px;
+  left: 1201px;
+}
+
+.main-page .vector-3 {
+  position: absolute;
+  width: 1760px;
+  height: 1px;
+  top: 1084px;
+  left: 0;
+}
+
+.main-page .vector-4 {
+  position: absolute;
+  width: 1760px;
+  height: 1px;
+  top: 3238px;
+  left: 0;
+}
+
+.main-page .vector-5 {
+  position: absolute;
+  width: 1920px;
+  height: 1px;
+  top: 1796px;
+  left: 0;
+}
+
+.main-page .vector-6 {
+  position: absolute;
+  width: 1920px;
+  height: 1px;
+  top: 1898px;
+  left: 0;
+}
+
+.main-page .vector-7 {
+  position: absolute;
+  width: 1px;
+  height: 572px;
+  top: 1020px;
+  left: 160px;
+}
+
+.main-page .vector-8 {
+  position: absolute;
+  width: 1px;
+  height: 704px;
+  top: 2799px;
+  left: 160px;
+}
+
+.main-page .vector-9 {
+  position: absolute;
+  width: 1px;
+  height: 1007px;
+  top: 1732px;
+  left: 1760px;
+}
+
+.main-page .work {
+  position: absolute;
+  top: 1123px;
+  left: 200px;
+  font-family: "Brandon Grotesque-Bold", Helvetica;
+  font-weight: 700;
+  color: #4c4a4d;
+  font-size: 16px;
+  letter-spacing: 0;
+  line-height: 24px;
+  white-space: nowrap;
+}
+
+.main-page .about {
+  position: absolute;
+  top: 3278px;
+  left: 200px;
+  font-family: "Brandon Grotesque-Bold", Helvetica;
+  font-weight: 700;
+  color: #4c4a4d;
+  font-size: 16px;
+  letter-spacing: 0;
+  line-height: 24px;
+  white-space: nowrap;
+}
+
+.main-page .services {
+  position: absolute;
+  top: 1835px;
+  left: 200px;
+  font-family: "Brandon Grotesque-Bold", Helvetica;
+  font-weight: 700;
+  color: #4c4a4d;
+  font-size: 16px;
+  letter-spacing: 0;
+  line-height: 24px;
+  white-space: nowrap;
+}
+
+.main-page .frame {
+  display: inline-flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 100px;
+  position: absolute;
+  top: 1288px;
+  left: 380px;
+}
+
+.main-page .frame-wrapper {
+  position: relative;
+  width: 1160px;
+  height: 52px;
+  overflow: hidden;
+  overflow-x: scroll;
+}
+
+.main-page .frame-2 {
+  display: inline-flex;
+  align-items: center;
+  gap: 60px;
+  position: relative;
+  left: -66px;
+  overflow-x: scroll;
+}
+
+.main-page .image {
+  width: 150.8px;
+  position: relative;
+  height: 52px;
+}
+
+.main-page .image-2 {
+  width: 110.07px;
+  position: relative;
+  height: 52px;
+}
+
+.main-page .hello {
+  position: relative;
+  width: 182px;
+  height: 52px;
+}
+
+.main-page .image-3 {
+  width: 156.87px;
+  object-fit: cover;
+  position: relative;
+  height: 52px;
+}
+
+.main-page .image-4 {
+  width: 208px;
+  position: relative;
+  height: 52px;
+}
+
+.main-page .image-5 {
+  width: 347.53px;
+  object-fit: cover;
+  position: relative;
+  height: 52px;
+}
+
+.main-page .image-6 {
+  width: 80.48px;
+  position: relative;
+  height: 52px;
+}
+
+.main-page .image-7 {
+  width: 434.2px;
+  position: relative;
+  height: 52px;
+}
+
+.main-page .vector-10 {
+  position: relative;
+  width: 1161px;
+  height: 1px;
+  margin-left: -0.5px;
+  margin-right: -0.5px;
+}
+
+.main-page .frame-3 {
+  display: inline-flex;
+  align-items: center;
+  gap: 60px;
+  padding: 0px 60px 0px 0px;
+  position: relative;
+  left: -66px;
+  overflow-x: scroll;
+}
+
+.main-page .image-8 {
+  width: 195.45px;
+  object-fit: cover;
+  position: relative;
+  height: 52px;
+}
+
+.main-page .image-9 {
+  width: 264.64px;
+  position: relative;
+  height: 52px;
+}
+
+.main-page .image-10 {
+  width: 173.64px;
+  position: relative;
+  height: 52px;
+}
+
+.main-page .image-11 {
+  width: 258.14px;
+  position: relative;
+  height: 52px;
+}
+
+.main-page .image-12 {
+  width: 258.14px;
+  object-fit: cover;
+  position: relative;
+  height: 52px;
+}
+
+.main-page .image-13 {
+  width: 406.71px;
+  object-fit: cover;
+  position: relative;
+  height: 52px;
+}
+
+.main-page .image-14 {
+  width: 293.43px;
+  position: relative;
+  height: 52px;
+}
+
+.main-page .frame-4 {
+  display: inline-flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 60px;
+  position: absolute;
+  top: 1999px;
+  left: 380px;
+}
+
+.main-page .frame-5 {
+  display: inline-flex;
+  align-items: center;
+  gap: 60px;
+  position: relative;
+  flex: 0 0 auto;
+}
+
+.main-page .element-wrapper {
+  position: relative;
+  width: 140px;
+  height: 140px;
+  border-radius: 70px;
+  border: 1px solid;
+  border-color: #4c4a4d;
+}
+
+.main-page .element {
+  position: absolute;
+  width: 27px;
+  height: 44px;
+  top: 47px;
+  left: 56px;
+}
+
+.main-page .group-2 {
+  position: relative;
+  width: 250px;
+  height: 116px;
+  margin-right: -4px;
+}
+
+.main-page .text-wrapper-4 {
+  position: absolute;
+  top: 0;
+  left: 0;
+  font-family: "Cormorant Garamond", Helvetica;
+  font-weight: 600;
+  color: #000000;
+  font-size: 64px;
+  letter-spacing: 0;
+  line-height: normal;
+}
+
+.main-page .text-wrapper-5 {
+  position: absolute;
+  top: 86px;
+  left: 8px;
+  opacity: 0.5;
+  font-family: "Brandon Grotesque-Regular", Helvetica;
+  font-weight: 400;
+  color: #4c4a4d;
+  font-size: 24px;
+  letter-spacing: 0;
+  line-height: 30px;
+  white-space: nowrap;
+}
+
+.main-page .element-2 {
+  position: absolute;
+  width: 38px;
+  height: 47px;
+  top: 46px;
+  left: 50px;
+}
+
+.main-page .group-3 {
+  position: relative;
+  width: 515px;
+  height: 116px;
+  margin-right: -4px;
+}
+
+.main-page .element-3 {
+  position: absolute;
+  width: 36px;
+  height: 78px;
+  top: 30px;
+  left: 51px;
+}
+
+.main-page .group-4 {
+  width: 411px;
+  position: relative;
+  height: 116px;
+  margin-right: -4px;
+}
+
+.main-page .element-4 {
+  position: absolute;
+  width: 45px;
+  height: 67px;
+  top: 36px;
+  left: 46px;
+}
+
+.main-page .group-5 {
+  width: 451px;
+  position: relative;
+  height: 116px;
+  margin-right: -4px;
+}
+
+.main-page .element-5 {
+  position: absolute;
+  width: 34px;
+  height: 80px;
+  top: 29px;
+  left: 52px;
+}
+
+.main-page .group-6 {
+  width: 670px;
+  position: relative;
+  height: 116px;
+  margin-right: -4px;
+}
+
+.main-page .element-6 {
+  position: absolute;
+  width: 44px;
+  height: 77px;
+  top: 31px;
+  left: 47px;
+}
+
+.main-page .group-7 {
+  width: 973px;
+  position: relative;
+  height: 116px;
+  margin-right: -4px;
+}
+
+.main-page .rectangle-2 {
+  height: 606px;
+  top: 3343px;
+  border: 1px solid;
+  border-color: #4c4a4d;
+  position: absolute;
+  width: 1342px;
+  left: 289px;
+}
+
+.main-page .ellipse-5 {
+  position: absolute;
+  width: 600px;
+  height: 600px;
+  top: 3403px;
+  left: 1160px;
+  background-color: #cfdae3;
+  border-radius: 300px;
+}
+
+.main-page .frame-6 {
+  display: inline-flex;
+  align-items: flex-start;
+  gap: 60px;
+  position: fixed;
+  top: 52px;
+  left: 638px;
+}
+
+.main-page .text-wrapper-6 {
+  position: relative;
+  width: fit-content;
+  margin-top: -1px;
+  font-family: "Brandon Grotesque-Medium", Helvetica;
+  font-weight: 500;
+  color: #4c4a4d;
+  font-size: 16px;
+  letter-spacing: 0;
+  line-height: 24px;
+  white-space: nowrap;
+}
+
+.main-page .frame-7 {
+  display: inline-flex;
+  align-items: flex-start;
+  gap: 60px;
+  position: fixed;
+  top: 52px;
+  left: 1099px;
+}
+
+.main-page .vector-11 {
+  position: fixed;
+  width: 38px;
+  height: 100px;
+  top: 40px;
+  left: 941px;
+}
+
+.main-page {
+  background-color: #e7e6e0;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  width: 100%;
+}
