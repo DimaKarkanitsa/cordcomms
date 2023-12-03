@@ -1,3 +1,26 @@
+@import "./_globals.scss";
+
+$mainBlack: #4c4a4d;
+
+$fontPrimaryR: "CG-Regular", sans-serif;
+$fontPrymarySb: "CG-SemiBold", sans-serif;
+$fontSecondaryR: "BG-Regular", sans-serif;
+%textS {
+  font-size: 40px;
+  font-family: $fontPrimaryR;
+  color: $mainBlack;
+}
+%textM {
+  font-size: 64px;
+  font-family: $fontPrimaryR;
+  color: $mainBlack;
+}
+%textL {
+  font-size: 180px;
+  font-family: $fontPrimaryR;
+  color: $mainBlack;
+}
+
 .wrapper {
   margin: 1.25rem;
 }
@@ -14,7 +37,7 @@
     gap: 60px;
     .link {
       text-decoration: none;
-      color: #4c4a4d;
+      color: $mainBlack;
       font-size: 16px;
       font-style: normal;
       line-height: 24px; /* 150% */
@@ -34,5 +57,47 @@
 
       margin: 0 60px 0 60px;
     }
+  }
+}
+
+.grid1 {
+  display: grid;
+  grid-template-columns: 322px 254px 272px 450px;
+  grid-template-rows: 218px;
+  align-items: center;
+  text-wrap: nowrap;
+  .text1 {
+    grid-column: 1/3;
+    @extend %textL;
+    text-align: start;
+  }
+  .text2 {
+    grid-column: 3/4;
+    font-family: $fontSecondaryR;
+  }
+  .text3 {
+    grid-column: 4/5;
+    width: 380px;
+    height: 218px;
+    display: flex;
+    align-items: center;
+
+    .line {
+      width: 100%;
+      height: 1px;
+      border-top: 1px solid $mainBlack;
+    }
+  }
+  .text4 {
+    grid-column: 1/2;
+    font-family: $fontSecondaryR;
+  }
+  .text5 {
+    grid-column: 2/5;
+    @extend %textL;
+  }
+  .text6 {
+    grid-column: 1/5;
+    @extend %textL;
   }
 }
