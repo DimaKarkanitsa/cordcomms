@@ -1,0 +1,39 @@
+$mainBlack: #4c4a4d;
+$secondBlack: #0e1822;
+
+$fontPrimaryR: CG-Regular, sans-serif;
+$fontPrymarySb: CG-SemiBold, sans-serif;
+$fontSecondaryR: BG-Regular, sans-serif;
+$fontSecondaryM: BG-Medium, sans-serif;
+$fontSecondaryB: BG-Bold, sans-serif;
+
+//Cormorant Garamond
+
+@mixin CormorantRegular($size) {
+  font-size: $size;
+  font-family: $fontPrimaryR;
+  color: $secondBlack;
+}
+@mixin CormorantSemiBold($size) {
+  font-size: $size;
+  font-family: $fontPrimaryR;
+  color: $secondBlack;
+}
+
+//Brandon Grotesque
+
+@mixin BrandonRegular($size) {
+  font-size: $size;
+  font-family: $fontSecondaryR;
+  color: $mainBlack;
+}
+@mixin BrandonMedium($size) {
+  font-size: $size;
+  font-family: $fontSecondaryM;
+  color: $mainBlack;
+}
+@mixin BrandonBold($size) {
+  font-size: $size;
+  font-family: $fontSecondaryB;
+  color: $mainBlack;
+}

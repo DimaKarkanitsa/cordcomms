@@ -1,37 +1,4 @@
-@import url("https://cdnjs.cloudflare.com/ajax/libs/meyer-reset/2.0/reset.min.css");
-
-%foontSizeS {
-  font-size: 24px;
-  font-family: BG-light;
-  color: #0e1822;
-  line-height: 1.2;
-  letter-spacing: 0.5px;
-}
-%foontSizeM {
-  font-size: 48px;
-  font-family: BG-Regular;
-  font-weight: 700;
-  color: #0e1822;
-  line-height: 1.2;
-  letter-spacing: 0.5px;
-}
-%foontSizeL {
-  font-size: 48px;
-  font-family: BG-Medium;
-  font-weight: 700;
-  color: #0e1822;
-  line-height: 1.2;
-  letter-spacing: 0.5px;
-}
-
-%foontSizeXl {
-  font-size: 48px;
-  font-family: BG-Bold;
-  font-weight: 700;
-  color: #0e1822;
-  line-height: 1.2;
-  letter-spacing: 0.5px;
-}
+// @import url("https://cdnjs.cloudflare.com/ajax/libs/meyer-reset/2.0/reset.min.css");
 
 * {
   -webkit-font-smoothing: antialiased;
@@ -48,24 +15,24 @@ button:focus-visible {
   outline: -webkit-focus-ring-color auto 5px !important;
 }
 
+// @font-face {
+//   font-family: "BG-light";
+//   src: url("../fonts/Brandon_Grotesque_light.otf") format("opentype");
+//   font-weight: 300;
+// }
 @font-face {
-  font-family: "BG-light";
-  src: url("../fonts/Brandon_Grotesque_light.otf") format("opentype");
-  font-weight: 300;
-}
-@font-face {
-  font-family: "BG-Regular";
+  font-family: BG-Regular;
   src: url("../fonts/Brandon_Grotesque_regular.otf") format("opentype");
   font-weight: 400;
 }
 @font-face {
-  font-family: "BG-Medium";
+  font-family: BG-Medium;
   src: url("../fonts/Brandon_Grotesque_medium.otf") format("opentype")
     format("opentype");
   font-weight: 500;
 }
 @font-face {
-  font-family: "BG-Bold";
+  font-family: BG-Bold;
   src: url("../fonts/Brandon_Grotesque_bold.otf") format("opentype");
   font-weight: 700;
 }
