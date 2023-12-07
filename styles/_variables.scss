@@ -9,14 +9,16 @@ $fontSecondaryB: BG-Bold, sans-serif;
 
 //Cormorant Garamond
 
-@mixin CormorantRegular($size) {
+@mixin CormorantRegular($size, $color: $secondBlack) {
   font-size: $size;
   font-family: $fontPrimaryR;
-  color: $secondBlack;
+  color: $color;
+  font-weight: 400;
 }
 @mixin CormorantSemiBold($size) {
   font-size: $size;
   font-family: $fontPrimaryR;
+  font-weight: 600;
   color: $secondBlack;
 }
 
@@ -25,15 +27,22 @@ $fontSecondaryB: BG-Bold, sans-serif;
 @mixin BrandonRegular($size) {
   font-size: $size;
   font-family: $fontSecondaryR;
+  font-weight: 390;
+  line-height: 1.4;
   color: $mainBlack;
 }
 @mixin BrandonMedium($size) {
   font-size: $size;
   font-family: $fontSecondaryM;
-  color: $mainBlack;
+  font-weight: 420;
+  line-height: 1.4;
+  color: $secondBlack;
 }
 @mixin BrandonBold($size) {
   font-size: $size;
   font-family: $fontSecondaryB;
   color: $mainBlack;
+  font-weight: 450;
+  line-height: 1.5;
+  text-transform: upperCase;
 }

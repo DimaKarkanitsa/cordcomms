@@ -1,7 +1,11 @@
+@use "sass:math";
 @import "./_globals.scss";
 @import "./_variables.scss";
-@mixin title($size: 60px) {
+
+@mixin title($size: 40px) {
+  @include BrandonBold(16px);
   margin-top: $size;
+  line-height: 1.5;
   margin-left: 200px;
 }
 @mixin border {
@@ -18,13 +22,12 @@
 //styles
 body {
   background-image: url(../img/bg_noise.png);
-
   background-color: #e7e6e0;
   background-image: url(../img/bg_noise.png);
   background-repeat: repeat;
 }
 .wrapper {
-  margin: 1.25rem 0 1.25rem 0;
+  width: 1920px;
 }
 main {
   display: flex;
@@ -121,6 +124,7 @@ main {
 //section1
 
 .work {
+  margin-top: 290px;
   width: 100%;
   display: flex;
   flex-direction: column;
@@ -140,7 +144,7 @@ main {
       z-index: 3;
     }
     .title {
-      @include title;
+      @include title(60px);
     }
 
     .work_line2 {
@@ -226,16 +230,12 @@ main {
   position: relative;
   .services_line2 {
     position: absolute;
-    left: 55.7%;
-    top: 200;
-    content: "";
-    display: block;
-    width: 1000px;
-    height: 1px;
-    border: 1px solid $mainBlack;
-    rotate: 90deg;
+    top: -104px;
+    left: 1760px;
+    width: 1px;
+    height: 1300px;
+    background-color: $mainBlack;
   }
-
   .title {
     @include title(40px);
   }
@@ -250,8 +250,8 @@ main {
 
   .services_circle {
     position: absolute;
-    top: 75px;
-    right: 10%;
+    top: 84px;
+    left: 1740px;
     width: 40px;
     height: 40px;
     flex-shrink: 0;
@@ -281,6 +281,7 @@ main {
       display: grid;
       grid-template-columns: 1fr 5fr;
       row-gap: 60px;
+      column-gap: 30px;
       align-items: center;
 
       .textWraper {
@@ -295,6 +296,7 @@ main {
         }
         .services_text2 {
           @include BrandonRegular(24px);
+          padding-left: 6px;
           opacity: 0.5;
         }
       }
@@ -303,3 +305,222 @@ main {
 }
 
 //section3 ABOUT
+.about {
+  width: 100%;
+  position: relative;
+  margin-top: 104px;
+
+  .about_line1 {
+    content: "";
+    display: block;
+    width: 1760px;
+    height: 1px;
+    background-color: $mainBlack;
+    margin-top: 0;
+  }
+  .about_line2 {
+    position: absolute;
+    top: -400px;
+    left: 160px;
+    content: "";
+    width: 1px;
+    height: 924px;
+    background-color: $mainBlack;
+  }
+  .about_background {
+    position: absolute;
+    top: 104px;
+    right: 160px;
+    left: 200px;
+    width: 1560px;
+    height: 780px;
+    background-color: $mainBlack;
+    opacity: 0.05;
+    border-radius: 0 0 780px 780px;
+    z-index: -1;
+  }
+  .about_title {
+    @include title(40px);
+  }
+}
+.about_container_grid {
+  display: grid;
+  margin: 100px 400px 0 160px;
+  grid-template-columns: 1fr 3fr;
+  row-gap: 60px;
+  column-gap: 100px;
+  align-items: top;
+
+  .about_circle {
+    grid-column: 1/2;
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    background-color: $mainBlack;
+    opacity: 0.1;
+    justify-self: flex-end;
+    align-self: center;
+  }
+  .about_image {
+    grid-column: 1/2;
+    width: 320px;
+
+    overflow: hidden;
+  }
+  .about_text {
+    grid-column: 2/3;
+    @include BrandonMedium(28px);
+
+    line-height: 40px;
+    color: $secondBlack;
+    margin-bottom: 120px;
+  }
+}
+.text_wrapper {
+  grid-column: 2/3;
+  display: flex;
+  flex-direction: column;
+
+  .text7 {
+    @include CormorantSemiBold(64px);
+    color: $secondBlack;
+  }
+  .text8 {
+    @include BrandonRegular(24px);
+    opacity: 0.5;
+    margin-top: 12px;
+  }
+  .text_main {
+    @include BrandonRegular(24px);
+    margin-top: 40px;
+  }
+  .text9 {
+    @include BrandonRegular(24px);
+    margin-top: 20px;
+  }
+  .about_dottedLine {
+    grid-column: 2/3;
+    width: 100%;
+    margin: 100px 0 100px 0;
+  }
+}
+
+//section4
+
+.testimonials {
+  width: 100%;
+  position: relative;
+}
+.testimonials_line1 {
+  content: "";
+  display: block;
+  width: 100%;
+  height: 1px;
+  background-color: $mainBlack;
+  margin-top: 0;
+}
+.testimonials_line2 {
+  position: absolute;
+  top: -50px;
+  left: 160px;
+  content: "";
+  width: 1px;
+  height: 528px;
+  background-color: $mainBlack;
+}
+.testimonials_line3 {
+  position: absolute;
+  right: calc(10vw + 19px);
+  top: -1700px;
+  width: 1px;
+  height: 1814px;
+  background-color: $mainBlack;
+}
+.testimonials_circle {
+  position: absolute;
+  top: -20px;
+  right: 10vw;
+  width: 40px;
+  height: 40px;
+  flex-shrink: 0;
+  border-radius: 50%;
+  background-color: rgba(182, 197, 211, 1);
+  opacity: 0.3;
+  z-index: 0;
+}
+.testimonials_title {
+  @include title(40px);
+}
+.testimonials_mainBlock {
+  width: 1342px;
+  height: 564px;
+  margin: 40px auto 0 auto;
+  padding: 100px;
+  background-color: rgba(76, 74, 77, 0.05);
+  position: relative;
+  .imgQoute_left {
+    position: absolute;
+    top: 40px;
+    left: -20px;
+    width: 60px;
+  }
+  .imgQoute_right {
+    position: absolute;
+    bottom: 40px;
+    right: -20px;
+    width: 60px;
+  }
+
+  .testimonials_content_grid {
+    height: 100%;
+    display: grid;
+    grid-template-columns: 1fr 10fr 3fr;
+    column-gap: 28px;
+    row-gap: 40px;
+    align-items: top;
+    .contentImg_1 {
+      grid-column: 1/2;
+      width: 84px;
+      height: 84px;
+      overflow: hidden;
+    }
+    .text_wrapper {
+      grid-column: 2/3;
+      display: flex;
+      flex-direction: column;
+      .text10 {
+        @include CormorantSemiBold(40px);
+        line-height: 48px;
+      }
+      .text11 {
+        @include BrandonRegular(24px);
+        margin-top: 8px;
+        line-height: 30px;
+        opacity: 0.5;
+      }
+    }
+    .arrows_wrapper {
+      grid-column: 3/4;
+      grid-row: 1/2;
+      justify-self: end;
+      display: flex;
+      gap: 40px;
+      .arrow_right {
+        width: 80px;
+        height: 60px;
+        -webkit-transform: scaleX(-1);
+        transform: scaleX(-1);
+      }
+      .arrow_left {
+        width: 80px;
+        height: 60px;
+      }
+    }
+    .testimonials_textMain {
+      grid-column: 1/4;
+      grid-row: 2/3;
+      @include BrandonRegular(24px);
+      line-height: 1.4;
+    }
+  }
+}
