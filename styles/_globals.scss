@@ -9,17 +9,24 @@ body {
   margin: 0px;
   width: 100%;
 }
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  margin: 0px;
+}
+a {
+  text-decoration: none;
+  color: inherit;
+}
 /* a blue color as a generic focus style */
 button:focus-visible {
   outline: 2px solid #4a90e2 !important;
   outline: -webkit-focus-ring-color auto 5px !important;
 }
 
-// @font-face {
-//   font-family: "BG-light";
-//   src: url("../fonts/Brandon_Grotesque_light.otf") format("opentype");
-//   font-weight: 300;
-// }
 @font-face {
   font-family: BG-Regular;
   src: url("../fonts/Brandon_Grotesque_regular.otf") format("opentype");
