@@ -402,11 +402,10 @@ main {
 
 .about_container_grid {
   display: grid;
-  margin: 100px 400px 0 160px;
+  margin: 164px 400px 0 160px;
+  -moz-column-gap: 60px;
+       column-gap: 60px;
   grid-template-columns: 1fr 3fr;
-  row-gap: 60px;
-  -moz-column-gap: 100px;
-       column-gap: 100px;
   align-items: top;
 }
 .about_container_grid .about_circle {
