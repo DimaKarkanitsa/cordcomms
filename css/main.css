@@ -380,8 +380,7 @@ main {
 .about .about_background {
   position: absolute;
   top: 104px;
-  right: 160px;
-  left: 200px;
+  left: 40px;
   width: 1560px;
   height: 780px;
   background-color: #4c4a4d;
