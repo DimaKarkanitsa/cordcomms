@@ -97,6 +97,32 @@ main {
 
 //header
 
+.circle1 {
+  position: absolute;
+  top: 305px;
+  left: 920px;
+  width: 600px;
+  height: 600px;
+  flex-shrink: 0;
+  border-radius: 50%;
+  background-color: rgba(207, 218, 227, 1);
+  opacity: 0.5;
+  filter: blur(30px);
+  z-index: -1;
+}
+
+.ellipse1 {
+  position: absolute;
+  top: 150px;
+  right: 0px;
+  width: 830px;
+  height: 830px;
+
+  // border-image: linear-gradient(black, transparent) ;
+  // border-image-slice: 1;
+  z-index: 1;
+}
+
 .grid1 {
   display: grid;
   width: 1346px;
@@ -105,6 +131,8 @@ main {
   grid-template-rows: 160px;
   align-items: center;
   text-wrap: nowrap;
+  display: relative;
+
   .grid1_text1 {
     grid-column: 1/3;
     @include CormorantRegular(180px);
@@ -157,9 +185,17 @@ main {
 
   .work_line2 {
     position: absolute;
+    top: -158px;
+    right: 50%;
+    width: 1px;
+    height: 222px;
+    background-color: $mainBlack;
+  }
+  .work_line3 {
+    position: absolute;
     top: -104px;
     width: 1px;
-    height: 572px;
+    height: 222px;
     background-color: $mainBlack;
   }
   .work_circle {
@@ -224,7 +260,8 @@ main {
 .services {
   width: 1600px;
   position: relative;
-
+  // background-image: url(../img/bg_noise.png);
+  // background-repeat: repeat;
   .services_line2 {
     position: absolute;
     top: -204px;
@@ -254,7 +291,18 @@ main {
   opacity: 0.3;
   z-index: 0;
 }
-
+.services_circle2 {
+  position: absolute;
+  top: 284px;
+  left: 0px;
+  width: 720px;
+  height: 720px;
+  border-radius: 50%;
+  background-color: white;
+  opacity: 0.5;
+  filter: blur(20px);
+  z-index: -1;
+}
 .service_content_wraper {
   display: flex;
   justify-content: center;
@@ -303,7 +351,7 @@ main {
 
   .about_line2 {
     position: absolute;
-    top: -400px;
+    top: -500px;
     left: 0;
     content: "";
     width: 1px;
@@ -328,9 +376,9 @@ main {
 }
 .about_container_grid {
   display: grid;
-  margin: 100px 400px 0 160px;
-  grid-template-columns: 1fr 3fr;
-  row-gap: 60px;
+  width: 1360px;
+  margin: 100px 0 0 0;
+  grid-template-columns: 1fr 4fr;
   column-gap: 100px;
   align-items: top;
 
@@ -344,6 +392,19 @@ main {
     justify-self: flex-end;
     align-self: center;
   }
+  .about_circle2 {
+    position: absolute;
+    top: 1605px;
+    right: 0px;
+    width: 800px;
+    height: 800px;
+    flex-shrink: 0;
+    border-radius: 50%;
+    background-color: rgba(207, 218, 227, 1);
+    opacity: 0.6;
+    filter: blur(40px);
+    z-index: -1;
+  }
   .about_image {
     grid-column: 1/2;
     width: 320px;
@@ -351,6 +412,7 @@ main {
     overflow: hidden;
   }
   .about_text {
+    width: 960px;
     grid-column: 2/3;
     @include BrandonMedium(28px);
 
