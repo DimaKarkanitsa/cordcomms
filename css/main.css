@@ -6,8 +6,8 @@
 
 html,
 body {
-  margin: 0px;
-  width: 100%;
+  display: flex;
+  justify-content: center;
 }
 
 h1,
@@ -70,7 +70,8 @@ body {
 }
 
 .wrapper {
-  width: 1920px;
+  width: 100%;
+  max-width: 1920px;
   margin-bottom: 56px;
 }
 
