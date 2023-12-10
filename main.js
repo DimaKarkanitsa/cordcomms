@@ -1,18 +1,3 @@
-const imgObj = [
-  { url: "./images/image-1.png", alt: "Mountains at dusk" },
-  {
-    url: "./images/image-2.png",
-    alt: "Mountain lake at sunset",
-  },
-  {
-    url: "./images/image-3.png",
-    alt: "River through the mountains",
-  },
-  {
-    url: "./images/image-4.png",
-    alt: "Mountain peak",
-  },
-]
 const slide = document.querySelector(".slide")
 const root = document.querySelector(":root")
 let slideIndex = 1
