@@ -62,8 +62,7 @@
   cursor: pointer;
 }
 
-// .slider__btn--left {
-// }
+/* .slider__btn--left { } */
 
 .slider__btn--right {
   transform: scaleX(-1);
