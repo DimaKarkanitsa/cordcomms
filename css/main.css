@@ -9,6 +9,7 @@ body {
   display: flex;
   flex-direction: column;
   align-items: center;
+  scroll-behavior: smooth;
 }
 
 h1,
@@ -260,7 +261,7 @@ main {
 .work .work_circle {
   position: absolute;
   top: -31px;
-  left: -31px;
+  left: -30px;
   width: 60px;
   height: 60px;
   flex-shrink: 0;
@@ -590,7 +591,7 @@ main {
 
 .testimonials_mainBlock {
   width: 1342px;
-  height: 564px;
+  height: 672px;
   margin: 40px auto 0 auto;
   padding: 100px;
   background-color: rgba(76, 74, 77, 0.05);
@@ -609,22 +610,38 @@ main {
   width: 60px;
   transform: scaleX(-1) scaleY(-1);
 }
-.testimonials_mainBlock .arrows_wrapper {
+.testimonials_mainBlock .slider {
+  width: 1142px;
+  overflow: hidden;
+}
+.testimonials_mainBlock .slider .slide {
+  display: flex;
+  align-items: flex-start;
+}
+.testimonials_mainBlock .slider .slide img {
+  width: 100%;
+  height: 100%;
+}
+.testimonials_mainBlock .slider__btn-container {
   position: absolute;
+  top: 100px;
   right: 100px;
   display: flex;
   gap: 40px;
 }
-.testimonials_mainBlock .arrows_wrapper .arrow_right {
-  width: 80px;
-  height: 60px;
+.testimonials_mainBlock .slider__btn {
+  z-index: 2;
+  display: grid;
+  cursor: pointer;
+  background-color: #d0cfcb;
+  border: none;
+}
+.testimonials_mainBlock .slider__btn--right {
   transform: scaleX(-1);
+  background-color: #d0cfcb;
 }
-.testimonials_mainBlock .arrows_wrapper .arrow_left {
-  width: 80px;
-  height: 60px;
-}
-.testimonials_mainBlock .testimonials_content_grid {
+
+.testimonials_content_grid {
   height: 100%;
   display: grid;
   grid-template-columns: 1fr 10fr;
@@ -633,25 +650,25 @@ main {
   row-gap: 40px;
   align-items: top;
 }
-.testimonials_mainBlock .testimonials_content_grid .contentImg_1 {
+.testimonials_content_grid .contentImg_1 {
   grid-column: 1/2;
   width: 84px;
   height: 84px;
   overflow: hidden;
 }
-.testimonials_mainBlock .testimonials_content_grid .text_wrapper {
+.testimonials_content_grid .text_wrapper {
   grid-column: 2/3;
   display: flex;
   flex-direction: column;
 }
-.testimonials_mainBlock .testimonials_content_grid .text_wrapper .text10 {
+.testimonials_content_grid .text_wrapper .text10 {
   font-size: 40px;
   font-family: CG-Regular, sans-serif;
   font-weight: 600;
   color: #0e1822;
   line-height: 48px;
 }
-.testimonials_mainBlock .testimonials_content_grid .text_wrapper .text11 {
+.testimonials_content_grid .text_wrapper .text11 {
   font-size: 24px;
   font-family: BG-Regular, sans-serif;
   font-weight: 390;
@@ -661,7 +678,7 @@ main {
   line-height: 30px;
   opacity: 0.5;
 }
-.testimonials_mainBlock .testimonials_content_grid .testimonials_textMain {
+.testimonials_content_grid .testimonials_textMain {
   grid-column: 1/3;
   grid-row: 2/3;
   font-size: 24px;
