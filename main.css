@@ -26,12 +26,6 @@ a {
   color: inherit;
 }
 
-/* a blue color as a generic focus style */
-button:focus-visible {
-  outline: 2px solid #4a90e2 !important;
-  outline: -webkit-focus-ring-color auto 5px !important;
-}
-
 @font-face {
   font-family: BG-Regular;
   src: url("../fonts/Brandon_Grotesque_regular.otf") format("opentype");
@@ -63,7 +57,7 @@ button:focus-visible {
   }
   100% {
     transform: translateX(-100%);
-  } /* Adjust the number of images */
+  }
 }
 body {
   background-image: url(../img/bg_noise.png);
@@ -296,7 +290,12 @@ main {
 .work .clientsBlock_wrapper .clientsBlock .clientsBlock_frame .items_wrap {
   animation: scroll 50s linear infinite;
 }
-.work .clientsBlock_wrapper .clientsBlock .clientsBlock_frame .items_wrap img.logoImg {
+.work
+  .clientsBlock_wrapper
+  .clientsBlock
+  .clientsBlock_frame
+  .items_wrap
+  img.logoImg {
   flex-shrink: 0;
   height: 52px;
   margin-right: 60px;
@@ -304,7 +303,11 @@ main {
 .work .clientsBlock_wrapper .clientsBlock .clientsBlock_frame .reverse {
   animation-direction: reverse;
 }
-.work .clientsBlock_wrapper .clientsBlock .clientsBlock_frame:hover .items_wrap {
+.work
+  .clientsBlock_wrapper
+  .clientsBlock
+  .clientsBlock_frame:hover
+  .items_wrap {
   animation-play-state: paused;
 }
 
@@ -374,7 +377,7 @@ main {
   grid-template-columns: 1fr 5fr;
   row-gap: 60px;
   -moz-column-gap: 30px;
-       column-gap: 30px;
+  column-gap: 30px;
   align-items: center;
 }
 .service_content_wraper .services_content_grid .numberImg-wrapper {
@@ -453,7 +456,7 @@ main {
   margin: 100px 0 0 0;
   grid-template-columns: 1fr 4fr;
   -moz-column-gap: 100px;
-       column-gap: 100px;
+  column-gap: 100px;
   align-items: top;
 }
 .about_container_grid .about_circle {
@@ -646,7 +649,7 @@ main {
   display: grid;
   grid-template-columns: 1fr 10fr;
   -moz-column-gap: 28px;
-       column-gap: 28px;
+  column-gap: 28px;
   row-gap: 40px;
   align-items: top;
 }
