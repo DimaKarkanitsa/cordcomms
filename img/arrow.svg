@@ -1,4 +1,3 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="80" height="60" viewBox="0 0 80 60" fill="none">
-  <rect width="80" height="60" fill="#D0CFCB"/>
-  <path d="M58 30H22M22 30L32.3409 20M22 30L32.3409 40" stroke="#4C4A4D"/>
+<svg width="80" height="60" viewBox="0 0 80 60" fill="none" xmlns="http://www.w3.org/2000/svg">
+<path d="M22 30H58M58 30L47.6591 20M58 30L47.6591 40" stroke="#4C4A4D"/>
 </svg>
