@@ -112,12 +112,7 @@ main {
   width: 100vw;
   height: 9.375vw;
   padding-top: 2.7083333333vw;
-  background-image: linear-gradient(
-    180deg,
-    #e7e6e0 0%,
-    rgba(231, 230, 224, 0.7) 53.63%,
-    rgba(231, 230, 224, 0) 100%
-  );
+  background-image: linear-gradient(180deg, #e7e6e0 0%, rgba(231, 230, 224, 0.7) 53.63%, rgba(231, 230, 224, 0) 100%);
   z-index: 10;
 }
 .navBar .navBar_list {
@@ -127,7 +122,7 @@ main {
   align-items: top;
   gap: 3.125vw;
 }
-.navBar .navBar_list .link {
+.navBar .navBar_list .link a {
   text-decoration: none;
   font-size: 0.8333333333vw;
   font-family: BG-Medium, sans-serif;
@@ -138,7 +133,7 @@ main {
   padding-top: 0.625vw;
   transition: 0.3s;
 }
-.navBar .navBar_list .link:hover {
+.navBar .navBar_list .link a:hover {
   font-style: normal;
   font-weight: 450;
   text-decoration-line: line-through;
@@ -327,12 +322,7 @@ main {
 .work .clientsBlock_wrapper .clientsBlock .clientsBlock_frame .items_wrap {
   animation: scroll 50s linear infinite;
 }
-.work
-  .clientsBlock_wrapper
-  .clientsBlock
-  .clientsBlock_frame
-  .items_wrap
-  img.logoImg {
+.work .clientsBlock_wrapper .clientsBlock .clientsBlock_frame .items_wrap img.logoImg {
   flex-shrink: 0;
   height: 2.7083333333vw;
   margin-right: 3.125vw;
@@ -340,11 +330,7 @@ main {
 .work .clientsBlock_wrapper .clientsBlock .clientsBlock_frame .reverse {
   animation-direction: reverse;
 }
-.work
-  .clientsBlock_wrapper
-  .clientsBlock
-  .clientsBlock_frame:hover
-  .items_wrap {
+.work .clientsBlock_wrapper .clientsBlock .clientsBlock_frame:hover .items_wrap {
   animation-play-state: paused;
 }
 
@@ -413,7 +399,7 @@ main {
   grid-template-columns: auto auto;
   row-gap: 3.125vw;
   -moz-column-gap: 1.5625vw;
-  column-gap: 1.5625vw;
+       column-gap: 1.5625vw;
   align-items: center;
 }
 .service_content_wraper .services_content_grid .numberImg-wrapper {
@@ -491,7 +477,7 @@ main {
   margin: 5.2083333333vw 0 0 0;
   grid-template-columns: 1fr 4fr;
   -moz-column-gap: 5.2083333333vw;
-  column-gap: 5.2083333333vw;
+       column-gap: 5.2083333333vw;
   align-items: center;
 }
 .about_container_grid .about_circle {
@@ -702,7 +688,7 @@ main {
   display: grid;
   grid-template-columns: 1fr 10fr;
   -moz-column-gap: 1.4583333333vw;
-  column-gap: 1.4583333333vw;
+       column-gap: 1.4583333333vw;
   row-gap: 2.0833333333vw;
   align-items: top;
 }

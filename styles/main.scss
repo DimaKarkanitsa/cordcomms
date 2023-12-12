@@ -48,7 +48,6 @@ main {
 }
 .sectionSeparator2 {
   width: 100vw;
-
   height: 1px;
   background-color: $mainBlack;
   margin-top: px2vw(40px);
@@ -86,14 +85,14 @@ main {
     justify-items: center;
     align-items: top;
     gap: px2vw(60px);
-    .link {
+    .link a {
       text-decoration: none;
       @include BrandonMedium(px2vw(16px));
       margin: 0;
       padding-top: px2vw(12px);
       transition: 0.3s;
     }
-    .link:hover {
+    .link a:hover {
       font-style: normal;
       font-weight: 450;
       text-decoration-line: line-through;
@@ -759,8 +758,6 @@ main {
     }
   }
 }
-
-//media
 
 //media
 @media (max-width: 600px) {
