@@ -16,8 +16,6 @@ function moveSlides() {
   )
 }
 
-// move when clicked
-
 function moveHandler(direction) {
   isMoving = true
   slide.style.transition = `transform 450ms ease-in-out`
@@ -25,7 +23,6 @@ function moveHandler(direction) {
   moveSlides()
 }
 
-// fetch images
 async function fetchImages() {
   await fetch("./images.json")
     .then((response) => {
@@ -35,10 +32,8 @@ async function fetchImages() {
       return response.json()
     })
     .then((data) => {
-      // cloned first and last image
       data.push(data[0])
       data.unshift(data[data.length - 2])
-      // show slider
       slide.innerHTML = data.map(processImages).join("")
       moveSlides()
     })
@@ -51,7 +46,6 @@ async function fetchImages() {
 }
 fetchImages()
 
-// keyboard arrow handler
 window.addEventListener("keyup", (e) => {
   if (isMoving) {
     return
@@ -68,7 +62,6 @@ window.addEventListener("keyup", (e) => {
   }
 })
 
-// click right btn
 document.querySelector(".slider__btn--right").addEventListener("click", () => {
   if (isMoving) {
     return
