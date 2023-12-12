@@ -4,10 +4,13 @@
   -webkit-font-smoothing: antialiased;
   box-sizing: border-box;
 }
+
 html,
 body {
-  margin: 0px;
-  width: 100%;
+  display: flex;
+  width: 100vw;
+  flex-direction: column;
+  scroll-behavior: smooth;
 }
 h1,
 h2,
@@ -22,10 +25,6 @@ a {
   color: inherit;
 }
 /* a blue color as a generic focus style */
-button:focus-visible {
-  outline: 2px solid #4a90e2 !important;
-  outline: -webkit-focus-ring-color auto 5px !important;
-}
 
 @font-face {
   font-family: BG-Regular;
