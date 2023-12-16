@@ -105,15 +105,15 @@ body {
     text-transform: uppercase;
   }
   #logo {
-    margin: 0 px2vw(60px) 0 px2vw(60px);
-    width: px2vw(38px);
+    margin: px2vw(-12px) px2vw(60px) 0 px2vw(60px);
+    width: px2vw(40px);
     height: px2vw(100px);
   }
 }
 
 //header
 .header {
-  margin: px2vw(68px) auto px2vw(126px) auto;
+  margin: px2vw(300px) auto px2vw(146px) auto;
 }
 .circle1 {
   position: absolute;
@@ -144,7 +144,7 @@ body {
   display: flex;
   flex-direction: column;
   width: px2vw(1350px);
-  margin: px2vw(360px) auto px2vw(140px) auto;
+  margin: 0 auto;
   display: relative;
   flex-wrap: nowrap;
   .flex_box1 {
