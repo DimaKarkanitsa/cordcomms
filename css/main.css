@@ -69,6 +69,10 @@ body {
   position: relative;
 }
 
+.mb {
+  display: none;
+}
+
 .wrapper {
   width: 83.3333333333vw;
   margin-inline: auto;
@@ -105,7 +109,6 @@ body {
 
 .navBar {
   display: flex;
-  position: absolute;
   position: fixed;
   top: 0;
   left: 0;
@@ -121,7 +124,7 @@ body {
   display: flex;
   margin: 0;
   justify-items: center;
-  align-items: top;
+  align-items: flex-start;
   gap: 3.125vw;
 }
 .navBar .link {
@@ -145,7 +148,7 @@ body {
   text-transform: uppercase;
 }
 .navBar #logo {
-  margin: -0.625vw 3.125vw 0 3.125vw;
+  margin: 0 3.125vw 0 3.125vw;
   width: 2.0833333333vw;
   height: 5.2083333333vw;
 }
@@ -181,11 +184,11 @@ body {
   flex-direction: column;
   width: 70.3125vw;
   margin: 0 auto;
-  display: relative;
   flex-wrap: nowrap;
 }
 .header_flex .flex_box1 {
   display: flex;
+  width: 100%;
   justify-content: flex-start;
   align-items: center;
   gap: 3.5416666667vw;
@@ -222,6 +225,7 @@ body {
 }
 .header_flex .flex_box2 {
   display: flex;
+  width: 100%;
   justify-content: flex-start;
   align-items: center;
   gap: 3.5416666667vw;
@@ -247,6 +251,7 @@ body {
 }
 .header_flex .flex_box3 {
   display: flex;
+  width: 100%;
   justify-content: flex-start;
   align-items: center;
 }
@@ -891,4 +896,60 @@ body {
 }
 .footer .footer_icons .icon:hover {
   filter: contrast(0.5);
+}
+
+@media (max-width: 600px) {
+  .dt {
+    display: none;
+  }
+  .mb {
+    display: block;
+  }
+  .header_flex {
+    width: 87.4666666667vw;
+  }
+  .header_flex .flex_box1 {
+    justify-content: space-between;
+  }
+  .header_flex .flex_box1 .box1_text1 {
+    font-size: 13.0666666667vw;
+    font-family: CG-Regular, sans-serif;
+    color: #0e1822;
+    font-weight: 400;
+    line-height: 1.2;
+    width: 37.3333333333vw;
+  }
+  .header_flex .flex_box2 {
+    width: 100%;
+  }
+  .header_flex .flex_box2 .box2_text5 {
+    font-size: 13.0666666667vw;
+    font-family: CG-Regular, sans-serif;
+    color: #0e1822;
+    font-weight: 400;
+    line-height: 1.2;
+    width: 100%;
+    text-align: end;
+    white-space: nowrap;
+    gap: 0;
+  }
+  .header_flex .flex_box3 .box3_text6 {
+    font-size: 13.0666666667vw;
+    font-family: CG-Regular, sans-serif;
+    color: #0e1822;
+    font-weight: 400;
+    line-height: 1;
+  }
+  .header_flex .flex_box4 {
+    width: 100%;
+  }
+  .header_flex .flex_box4 .box4_text1 {
+    margin-top: 10.6666666667vw;
+    font-size: 4.2666666667vw;
+    font-family: BG-Regular, sans-serif;
+    font-weight: 390;
+    line-height: 1.4;
+    color: #4c4a4d;
+    line-height: 1.2;
+  }
 }

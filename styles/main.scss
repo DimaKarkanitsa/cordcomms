@@ -1,4 +1,3 @@
-@use "sass:math";
 @import "./_globals.scss";
 @import "./_variables.scss";
 @import "./_mixins.scss";
@@ -20,15 +19,19 @@
     transform: translateX(-100%);
   } /* Adjust the number of images */
 }
-
+$color: #e7e6e0;
 //styles
 
 body {
   width: 100vw;
   background-image: url(../img/bg_noise.png);
-  background-color: #e7e6e0;
+  background-color: $color;
   background-repeat: repeat;
   position: relative;
+}
+
+.mb {
+  display: none;
 }
 .wrapper {
   width: px2vw(1600px);
@@ -64,7 +67,6 @@ body {
 
 .navBar {
   display: flex;
-  position: absolute;
   position: fixed;
   top: 0;
   left: 0;
@@ -85,7 +87,7 @@ body {
     display: flex;
     margin: 0;
     justify-items: center;
-    align-items: top;
+    align-items: flex-start;
     gap: px2vw(60px);
   }
   .link {
@@ -105,7 +107,7 @@ body {
     text-transform: uppercase;
   }
   #logo {
-    margin: px2vw(-12px) px2vw(60px) 0 px2vw(60px);
+    margin: 0 px2vw(60px) 0 px2vw(60px);
     width: px2vw(40px);
     height: px2vw(100px);
   }
@@ -145,10 +147,10 @@ body {
   flex-direction: column;
   width: px2vw(1350px);
   margin: 0 auto;
-  display: relative;
   flex-wrap: nowrap;
   .flex_box1 {
     display: flex;
+    width: 100%;
     justify-content: flex-start;
     align-items: center;
     gap: px2vw(68px);
@@ -179,6 +181,7 @@ body {
   }
   .flex_box2 {
     display: flex;
+    width: 100%;
     justify-content: flex-start;
     align-items: center;
     gap: px2vw(68px);
@@ -197,6 +200,7 @@ body {
   }
   .flex_box3 {
     display: flex;
+    width: 100%;
     justify-content: flex-start;
     align-items: center;
     .box3_text6 {
@@ -777,5 +781,50 @@ body {
 
 //media
 @media (max-width: 600px) {
-  $width: 360px;
+  .dt {
+    display: none;
+  }
+  .mb {
+    display: block;
+  }
+  .header_flex {
+    width: px2vw(328px, 375px);
+
+    .flex_box1 {
+      justify-content: space-between;
+      .box1_text1 {
+        @include CormorantRegular(px2vw(49px, 375px));
+        line-height: 1.2;
+        width: px2vw(140px, 375px);
+      }
+    }
+    .flex_box2 {
+      width: 100%;
+
+      .box2_text5 {
+        @include CormorantRegular(px2vw(49px, 375px));
+        line-height: 1.2;
+        width: 100%;
+        text-align: end;
+        white-space: nowrap;
+        gap: 0;
+      }
+    }
+
+    .flex_box3 {
+      .box3_text6 {
+        @include CormorantRegular(px2vw(49px, 375px));
+        line-height: 1;
+      }
+    }
+    .flex_box4 {
+      width: 100%;
+
+      .box4_text1 {
+        margin-top: px2vw(40px, 375px);
+        @include BrandonRegular(px2vw(16px, 375px));
+        line-height: 1.2;
+      }
+    }
+  }
 }
