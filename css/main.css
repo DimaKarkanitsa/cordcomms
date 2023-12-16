@@ -150,13 +150,13 @@ body {
   text-transform: uppercase;
 }
 .navBar #logo {
-  margin: 0 3.125vw 0 3.125vw;
-  width: 1.9791666667vw;
+  margin: -0.625vw 3.125vw 0 3.125vw;
+  width: 2.0833333333vw;
   height: 5.2083333333vw;
 }
 
 .header {
-  margin: 16vw auto 6.5625vw auto;
+  margin: 15.625vw auto 7.6041666667vw auto;
 }
 
 .circle1 {
@@ -185,7 +185,7 @@ body {
   display: flex;
   flex-direction: column;
   width: 70.3125vw;
-  /* margin: 18.75vw auto 7.2916666667vw auto; */
+  margin: 0 auto;
   display: relative;
   flex-wrap: nowrap;
 }
