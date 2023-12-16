@@ -29,6 +29,7 @@ body {
   background-color: #e7e6e0;
   background-repeat: repeat;
   margin-inline: auto;
+  position: relative;
 }
 .wrapper {
   width: px2vw(1600px);
@@ -63,6 +64,7 @@ main {
 
 .navBar {
   display: flex;
+  position: absolute;
   position: fixed;
   top: 0;
   left: 0;
@@ -85,30 +87,33 @@ main {
     justify-items: center;
     align-items: top;
     gap: px2vw(60px);
-    .link a {
-      text-decoration: none;
-      @include BrandonMedium(px2vw(16px));
-      margin: 0;
-      padding-top: px2vw(12px);
-      transition: 0.3s;
-    }
-    .link a:hover {
-      font-style: normal;
-      font-weight: 450;
-      text-decoration-line: line-through;
-      text-transform: uppercase;
-    }
-    #logo {
-      margin: 0 px2vw(60px) 0 px2vw(60px);
-      width: px2vw(38px);
-      height: px2vw(100px);
-    }
+  }
+  .link {
+    padding-top: px2vw(12px);
+  }
+  .link a {
+    text-decoration: none;
+    @include BrandonMedium(px2vw(16px));
+    margin: 0;
+    padding-top: px2vw(12px);
+    transition: 0.3s;
+  }
+  .link a:hover {
+    font-style: normal;
+    font-weight: 450;
+    text-decoration-line: line-through;
+    text-transform: uppercase;
+  }
+  #logo {
+    margin: 0 px2vw(60px) 0 px2vw(60px);
+    width: px2vw(38px);
+    height: px2vw(100px);
   }
 }
 
 //header
 .header {
-  margin: px2vw(180px) auto px2vw(290px) auto;
+  margin: px2vw(360px) auto px2vw(290px) auto;
 }
 .circle1 {
   position: absolute;
