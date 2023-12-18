@@ -27,6 +27,7 @@ body {
   background-image: url(../img/bg_noise.png);
   background-color: $color;
   background-repeat: repeat;
+  overflow-x: hidden;
   position: relative;
 }
 
@@ -72,7 +73,7 @@ body {
   left: 0;
   right: 0;
   justify-content: center;
-  width: 100vw;
+  width: 100%;
   height: px2vw(180px);
   padding-top: px2vw(52px);
   background-image: linear-gradient(
@@ -171,7 +172,7 @@ body {
       display: flex;
       align-items: center;
 
-      .line {
+      .box1_line {
         content: "";
         width: 100%;
         height: 1px;
@@ -244,7 +245,7 @@ body {
     flex-shrink: 0;
     border-radius: 50%;
     background-color: #b6c5d3;
-    opacity: 0.75;
+    opacity: 0.9;
     z-index: -1;
   }
 
@@ -297,6 +298,7 @@ body {
 .services {
   width: px2vw(1600px);
   position: relative;
+
   .services_line2 {
     position: absolute;
     top: px2vw(-204px);
@@ -418,7 +420,7 @@ body {
   align-items: center;
 
   .about_circle {
-    grid-column: 1/2;
+    // grid-column: 1/2;
     width: px2vw(60px);
     height: px2vw(60px);
 
@@ -428,24 +430,22 @@ body {
     justify-self: flex-end;
     align-self: center;
   }
-  .about_circle2 {
-    position: absolute;
-    top: px2vw(1605px);
-    right: 0px;
-    width: px2vw(800px);
-    height: px2vw(800px);
-    flex-shrink: 0;
-    border-radius: 50%;
-    background-color: #cfdae3;
-    filter: blur(px2vw(80px));
-    z-index: -1;
-  }
+
   .about_text {
-    width: px2vw(960px);
-    grid-column: 2/3;
-    @include BrandonMedium(px2vw(28px));
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: px2vw(48px, 375px);
+    gap: px2vw(8px, 375px);
+    width: px2vw(960px, 375px);
+
+    @include BrandonMedium(px2vw(28px, 375px));
     line-height: px2vw(40px);
     color: $secondBlack;
+    p {
+      font-family: inherit;
+      font-size: inherit;
+    }
   }
 }
 .team {
@@ -456,6 +456,19 @@ body {
   grid-template-columns: 1fr 4fr;
   column-gap: px2vw(100px);
   align-items: center;
+  position: relative;
+  .team_circle1 {
+    position: absolute;
+    top: px2vw(1238px);
+    right: 0px;
+    width: px2vw(800px);
+    height: px2vw(800px);
+    flex-shrink: 0;
+    border-radius: 50%;
+    background-color: #cfdae3;
+    filter: blur(px2vw(80px));
+    z-index: -1;
+  }
   .about_image {
     grid-column: 1/2;
     width: px2vw(320px);
@@ -693,6 +706,7 @@ body {
       }
       .textBlock2_2 {
         display: flex;
+
         align-items: center;
         gap: px2vw(40px);
 
@@ -700,7 +714,7 @@ body {
           display: flex;
           justify-content: center;
           align-items: center;
-          border: 1px solid $mainBlack;
+          border: 1px solid $secondBlack;
           height: px2vw(60px);
           width: px2vw(347px);
           margin: auto;
@@ -723,13 +737,13 @@ body {
             stroke: $secondBlack;
           }
         }
-      }
 
-      .arrow_box svg {
-        width: 100%;
-        height: 100%;
+        .arrow_box svg {
+          width: 100%;
+          height: 100%;
 
-        // stroke: #fff;
+          // stroke: #fff;
+        }
       }
     }
   }
@@ -753,15 +767,21 @@ body {
   .footer_text {
     display: flex;
     gap: px2vw(60px);
-    opacity: 0.5;
+
     .footer_text1 {
       @include BrandonMedium(px2vw(16px));
+      color: $mainBlack;
+      opacity: 0.5;
     }
     .footer_text2 {
       @include BrandonMedium(px2vw(16px));
+      color: $mainBlack;
+      opacity: 0.5;
     }
     .footer_text3 {
       @include BrandonMedium(px2vw(16px));
+      color: $mainBlack;
+      opacity: 0.5;
     }
   }
   .footer_icons {
@@ -781,11 +801,52 @@ body {
 
 //media
 @media (max-width: 600px) {
+  body {
+    background-image: url(../img/noiseBgMb.png);
+  }
   .dt {
     display: none;
   }
   .mb {
     display: block;
+  }
+
+  .navBar {
+    height: auto;
+    padding-top: px2vw(28px, 375px);
+  }
+  .navBar .link {
+    width: px2vw(28px, 375px);
+    height: px2vw(72px, 375px);
+    padding-top: 0;
+  }
+  #logo {
+    padding: 0;
+    width: px2vw(28px, 375px);
+    height: px2vw(72px, 375px);
+  }
+  .main {
+    width: 100%;
+    padding: 0;
+    margin-top: px2vw(212px, 375px);
+  }
+  .header {
+    width: 100%;
+    margin-top: 228px;
+    .ellipse1 {
+      top: 152px;
+      left: 0;
+      width: 452px;
+      height: 452px;
+    }
+    .circle1 {
+      top: px2vw(228px, 375px);
+      right: 0;
+      width: px2vw(320px, 375px);
+      height: px2vw(320px, 375px);
+      opacity: 0.9;
+      filter: blur(60px);
+    }
   }
   .header_flex {
     width: px2vw(328px, 375px);
@@ -796,6 +857,9 @@ body {
         @include CormorantRegular(px2vw(49px, 375px));
         line-height: 1.2;
         width: px2vw(140px, 375px);
+      }
+      .box1_text3 {
+        width: px2vw(161px, 375px);
       }
     }
     .flex_box2 {
@@ -819,11 +883,332 @@ body {
     }
     .flex_box4 {
       width: 100%;
+      margin-top: px2vw(40px, 375px);
 
       .box4_text1 {
-        margin-top: px2vw(40px, 375px);
         @include BrandonRegular(px2vw(16px, 375px));
         line-height: 1.2;
+      }
+    }
+  }
+
+  .work {
+    width: 100%;
+
+    .work_circle {
+      top: px2vw(-11px, 375px);
+      left: px2vw(12px, 375px);
+
+      width: px2vw(20px, 375px);
+      height: px2vw(20px, 375px);
+    }
+    .title {
+      margin-top: px2vw(24px, 375px);
+      margin-left: px2vw(24px, 375px);
+      @include BrandonBold(px2vw(10px, 375px));
+      line-height: 1.2;
+    }
+    .clientsBlock_wrapper {
+      margin: px2vw(24px, 375px) auto 0 auto;
+      justify-content: center;
+      padding: px2vw(40px, 375px) px2vw(24px, 375px);
+      width: 100%;
+      height: px2vw(224px, 375px);
+    }
+    .clientsBlock_wrapper .clientsBlock .clientsBlock_frame {
+      height: 100%;
+      align-items: center;
+      overflow: hidden;
+    }
+
+    .clientsBlock_wrapper
+      .clientsBlock
+      .clientsBlock_frame
+      .items_wrap
+      img.logoImg {
+      height: px2vw(32px, 375px);
+      margin-right: px2vw(24px, 375px);
+    }
+
+    .clientsBlock_wrapper .clientsBlock .clientsBlock_frame .reverse {
+      align-items: center;
+    }
+  }
+  .sectionSeparator {
+    margin: 0;
+  }
+
+  .services {
+    width: 100%;
+  }
+  .services .title {
+    margin-top: px2vw(24px, 375px);
+    margin-left: px2vw(24px, 375px);
+    @include BrandonBold(px2vw(10px, 375px));
+    line-height: 1.2;
+  }
+
+  .sectionSeparator2 {
+    margin-top: px2vw(24px, 375px);
+  }
+  .services_circle {
+    top: px2vw(-11px, 375px);
+    right: px2vw(11px, 375px);
+    width: px2vw(20px, 375px);
+    height: px2vw(20px, 375px);
+  }
+  .services_circle2 {
+    width: px2vw(300px, 375px);
+    height: px2vw(300px, 375px);
+    filter: blur(60px);
+    // right: px2vw(40px, 375px);
+    overflow: clip;
+  }
+  .service_content_wraper {
+    margin: 0;
+    padding: px2vw(60px, 375px) px2vw(24px, 375px) 0 px2vw(24px, 375px);
+    width: 100%;
+
+    .services_content_grid {
+      width: 100%;
+      row-gap: px2vw(40px, 375px);
+      column-gap: px2vw(24px, 375px);
+    }
+    .services_content_grid .numberImg-wrapper {
+      width: px2vw(80px, 375px);
+      height: px2vw(80px, 375px);
+    }
+    .services_content_grid .textWraper {
+      height: auto;
+      gap: px2vw(8px, 375px);
+    }
+
+    .services_content_grid .textWraper h3.services_text1 {
+      @include CormorantSemiBold(px2vw(24px, 375px));
+      line-height: 1.17;
+    }
+
+    .services_content_grid .textWraper .services_text2 {
+      @include BrandonRegular(px2vw(16px, 375px));
+      line-height: 1.2;
+    }
+  }
+  .sectionSeparator3 {
+    margin: px2vw(60px, 375px) 0 0 0;
+  }
+
+  .about {
+    .about_background2 {
+      overflow: hidden;
+      position: absolute;
+      top: px2vw(60px, 375px);
+
+      svg {
+        width: px2vw(375px, 375px);
+        height: px2vw(300px, 375px);
+      }
+    }
+  }
+
+  .about .about_title {
+    margin-top: px2vw(24px, 375px);
+    margin-left: px2vw(24px, 375px);
+    @include BrandonBold(px2vw(10px, 375px));
+    line-height: 1.2;
+  }
+  .about_container_grid {
+    display: block;
+    padding: 24px;
+  }
+  .about_container_grid .about_text {
+    width: 100%;
+    margin: 0 auto;
+    @include BrandonMedium(px2vw(16px, 375px));
+    line-height: 1.25;
+  }
+  .team {
+    display: flex;
+    flex-direction: column;
+    padding: 0 24px;
+
+    .about_image {
+      width: 100%;
+      margin: 0 auto;
+      overflow: hidden;
+    }
+    .text_wrapper .text7 {
+      margin-top: px2vw(24px, 375px);
+      @include CormorantSemiBold(px2vw(24px, 375px));
+      line-height: 1.17;
+    }
+    .text_wrapper .text8 {
+      margin-top: px2vw(8px, 375px);
+      @include BrandonRegular(px2vw(16px, 375px));
+      line-height: 1.25;
+    }
+    .text_wrapper .text_main {
+      margin-top: px2vw(24px, 375px);
+      @include BrandonRegular(px2vw(16px, 375px));
+    }
+    .text_wrapper .text9 {
+      margin-top: px2vw(8px, 375px);
+      @include BrandonRegular(px2vw(16px, 375px));
+    }
+    .about_background {
+      margin: px2vw(40px, 375px) 0 px2vw(60px, 375px) 0;
+    }
+    .about_dottedLine {
+      margin: px2vw(24px, 375px) 0 px2vw(40px, 375px) 0;
+
+      svg {
+        width: 100%;
+      }
+    }
+  }
+  .testimonials {
+    width: 100%;
+  }
+  .testimonials_title {
+    @include BrandonBold(px2vw(10px, 375px));
+    margin-top: px2vw(24px, 375px);
+    margin-left: px2vw(24px, 375px);
+    line-height: 1.2;
+  }
+  .testimonials_mainBlock {
+    width: 100%;
+    height: px2vw(640px, 375px);
+    padding: px2vw(64px, 375px) px2vw(24px, 375px) px2vw(148px, 375px)
+      px2vw(24px, 375px);
+
+    .slider {
+      width: 100%;
+      height: 100%;
+    }
+    .slider .slide {
+      img {
+        width: px2vw(327px, 375px);
+        height: px2vw(428px, 375px);
+      }
+    }
+    .imgQoute_left {
+      position: absolute;
+      top: px2vw(12px, 375px);
+      left: px2vw(12px, 375px);
+      width: px2vw(32px, 375px);
+    }
+    .imgQoute_right {
+      top: auto;
+      left: auto;
+      position: absolute;
+      bottom: px2vw(96px, 375px);
+      right: px2vw(12px, 375px);
+      width: px2vw(32px, 375px);
+    }
+    .slider__btn-container {
+      top: auto;
+      right: auto;
+      left: px2vw(24px, 375px);
+      bottom: px2vw(64px, 375px);
+      width: px2vw(172px, 375px);
+      height: px2vw(60px, 375px);
+      gap: px2vw(12px, 375px);
+    }
+    .slider__btn {
+      width: 100%;
+      height: 100%;
+    }
+  }
+  .contact {
+    width: 100%;
+    padding: 60px 24px;
+    border-bottom: 1px solid $mainBlack;
+    .textBlock {
+      width: 100%;
+      height: 100%;
+      margin: 0;
+      gap: px2vw(40px, 375px);
+    }
+    .textBlock .textBlock1 {
+      width: 100%;
+      gap: px2vw(8px, 375px);
+      @include BrandonRegular(px2vw(16px, 375px));
+      line-height: 1.25;
+    }
+    .textBlock .textBlock2 {
+      flex-direction: column;
+      justify-content: flex-start;
+      width: 100%;
+      gap: px2vw(24px, 375px);
+    }
+    .textBlock .textBlock2 .textBlock2_1 {
+      @include CormorantSemiBold(px2vw(24px, 375px));
+      line-height: 1.17;
+    }
+    .textBlock .textBlock2 .textBlock2_2 {
+      width: px2vw(327px, 375px);
+      height: px2vw(60px, 375px);
+      // justify-content: flex-start;
+      gap: px2vw(12px, 375px);
+    }
+    .textBlock .textBlock2 .textBlock2_2 .email {
+      width: px2vw(235px, 375px);
+      height: 100%;
+      margin: 0;
+      @include BrandonRegular(px2vw(16px, 375px));
+      line-height: 1.25;
+    }
+    .textBlock .textBlock2 .textBlock2_2 .arrow_box {
+      width: px2vw(80px, 375px);
+      height: 100%;
+    }
+  }
+  .footer {
+    width: 100%;
+    height: 228px;
+    margin: 40px 0 0 0;
+    padding: 60px 88px 40px 24px;
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: repeat(2, auto);
+    row-gap: px2vw(40px, 375px);
+
+    .footer_icons {
+      grid-row: 1/2;
+      width: px2vw(104px, 375px);
+      height: px2vw(32px, 375px);
+      justify-content: flex-start;
+      gap: px2vw(40px, 375px);
+      .icon {
+        width: 100%;
+        height: 100%;
+      }
+    }
+    .footer_text {
+      grid-row: 2/3;
+      width: 100%;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      grid-template-rows: repeat(2, auto);
+      gap: 24px;
+
+      .footer_text1 {
+        @include BrandonMedium(px2vw(12px, 375px));
+        grid-row: 2/3;
+        grid-column: 1/3;
+      }
+      .footer_text2 {
+        @include BrandonMedium(px2vw(12px, 375px));
+        grid-row: 1/2;
+        grid-column: 1/2;
+        opacity: 1;
+        text-wrap: nowrap;
+      }
+      .footer_text3 {
+        @include BrandonMedium(px2vw(12px, 375px));
+        grid-row: 1/2;
+        grid-column: 2/3;
+        text-wrap: nowrap;
+        opacity: 1;
       }
     }
   }
