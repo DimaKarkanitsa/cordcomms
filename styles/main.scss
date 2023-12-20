@@ -79,11 +79,13 @@ body {
   background-image: linear-gradient(
     180deg,
     #e7e6e0 0%,
-    rgba(231, 230, 224, 0.7) 53.63%,
     rgba(231, 230, 224, 0) 100%
   );
   z-index: 10;
 
+  .navBar_container {
+    display: block;
+  }
   .navBar_list {
     display: flex;
     margin: 0;
@@ -93,10 +95,12 @@ body {
   }
   .link {
     padding-top: px2vw(12px);
+    width: auto;
   }
   .link a {
     text-decoration: none;
     @include BrandonMedium(px2vw(16px));
+
     margin: 0;
     padding-top: px2vw(12px);
     transition: 0.3s;
@@ -107,10 +111,13 @@ body {
     text-decoration-line: line-through;
     text-transform: uppercase;
   }
-  #logo {
-    margin: 0 px2vw(60px) 0 px2vw(60px);
-    width: px2vw(40px);
+  .logo {
+    width: px2vw(48px);
     height: px2vw(100px);
+    svg {
+      width: 100%;
+      height: 100%;
+    }
   }
 }
 
@@ -140,7 +147,7 @@ body {
 
   // border-image: linear-gradient(black, transparent) ;
   // border-image-slice: 1;
-  z-index: 1;
+  // z-index: 1;
 }
 
 .header_flex {
@@ -171,7 +178,6 @@ body {
       grid-row: 1/2;
       display: flex;
       align-items: center;
-
       .box1_line {
         content: "";
         width: 100%;
@@ -435,11 +441,11 @@ body {
     display: flex;
     flex-direction: column;
     align-items: center;
-    margin-top: px2vw(48px, 375px);
-    gap: px2vw(8px, 375px);
-    width: px2vw(960px, 375px);
+    margin-top: px2vw(48px);
+    gap: px2vw(8px);
+    width: px2vw(960px);
 
-    @include BrandonMedium(px2vw(28px, 375px));
+    @include BrandonMedium(px2vw(28px));
     line-height: px2vw(40px);
     color: $secondBlack;
     p {
@@ -767,7 +773,6 @@ body {
   .footer_text {
     display: flex;
     gap: px2vw(60px);
-
     .footer_text1 {
       @include BrandonMedium(px2vw(16px));
       color: $mainBlack;
@@ -806,29 +811,103 @@ body {
   }
   .dt {
     display: none;
+    pointer-events: none;
   }
   .mb {
     display: block;
   }
-
+  ._lock {
+    overflow: hidden;
+  }
+  ._hide {
+    display: none;
+  }
   .navBar {
-    height: auto;
-    padding-top: px2vw(28px, 375px);
+    display: block;
+    width: 100%;
+    height: px2vw(96px, 375px);
+    padding: px2vw(24px, 375px);
+    position: fixed;
+    .navBar_list {
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      padding-top: max(160px, 25vh);
+      display: none;
+      grid-template-columns: 1fr;
+      grid-template-rows: repeat(7, 32px);
+      row-gap: 40px;
+      height: 100vh;
+      opacity: 0;
+      background-image: url(../img/noiseBgMb.png);
+      transition: all 0.3s ease 0s;
+
+      overflow-y: scroll;
+      .navBar_media_icons {
+        display: flex;
+        gap: 40px;
+      }
+    }
+    ._show {
+      display: grid;
+      opacity: 1;
+      background-color: #e7e6e0;
+      z-index: 8;
+    }
+    .link a {
+      height: 100%;
+      @include BrandonMedium(px2vw(16px, 375px));
+      color: $mainBlack;
+      line-height: 1;
+    }
   }
-  .navBar .link {
-    width: px2vw(28px, 375px);
-    height: px2vw(72px, 375px);
-    padding-top: 0;
+  // .navBar .navBar_container {
+  // }
+  .logoMb {
+    position: absolute;
+    top: px2vw(24px, 375px);
+    left: 0;
+    right: 0;
+    width: 100%;
+    height: 72px;
+    z-index: 10;
   }
-  #logo {
-    padding: 0;
+  .navBar_icon {
+    float: right;
     width: px2vw(28px, 375px);
-    height: px2vw(72px, 375px);
+    height: px2vw(28px, 375px);
+    position: relative;
+    cursor: pointer;
+    z-index: 10;
+    ::before,
+    ::after {
+      position: absolute;
+      content: "";
+      height: 1px;
+      width: 100%;
+      background-color: $mainBlack;
+      transition: all 0.3s ease 0s;
+    }
+    ::before {
+      top: 30%;
+    }
+    ::after {
+      bottom: 30%;
+    }
+  }
+  ._active ::before {
+    top: 50%;
+    transform: rotate(-45deg) translate(0px, -50%);
+  }
+  ._active ::after {
+    bottom: 50%;
+    transform: rotate(45deg) translate(0px, 50%);
   }
   .main {
     width: 100%;
     padding: 0;
-    margin-top: px2vw(212px, 375px);
+    margin-top: px2vw(130px, 375px);
   }
   .header {
     width: 100%;
@@ -894,11 +973,13 @@ body {
 
   .work {
     width: 100%;
-
+    .work_line2 {
+      top: px2vw(-48px, 375px);
+      height: px2vw(84px, 375px);
+    }
     .work_circle {
       top: px2vw(-11px, 375px);
       left: px2vw(12px, 375px);
-
       width: px2vw(20px, 375px);
       height: px2vw(20px, 375px);
     }
@@ -906,7 +987,7 @@ body {
       margin-top: px2vw(24px, 375px);
       margin-left: px2vw(24px, 375px);
       @include BrandonBold(px2vw(10px, 375px));
-      line-height: 1.2;
+      line-height: 1;
     }
     .clientsBlock_wrapper {
       margin: px2vw(24px, 375px) auto 0 auto;
@@ -935,7 +1016,7 @@ body {
     }
   }
   .sectionSeparator {
-    margin: 0;
+    margin: 60px 0 0 0;
   }
 
   .services {
@@ -945,7 +1026,7 @@ body {
     margin-top: px2vw(24px, 375px);
     margin-left: px2vw(24px, 375px);
     @include BrandonBold(px2vw(10px, 375px));
-    line-height: 1.2;
+    line-height: 1;
   }
 
   .sectionSeparator2 {
@@ -961,7 +1042,6 @@ body {
     width: px2vw(300px, 375px);
     height: px2vw(300px, 375px);
     filter: blur(60px);
-    // right: px2vw(40px, 375px);
     overflow: clip;
   }
   .service_content_wraper {
@@ -1014,7 +1094,7 @@ body {
     margin-top: px2vw(24px, 375px);
     margin-left: px2vw(24px, 375px);
     @include BrandonBold(px2vw(10px, 375px));
-    line-height: 1.2;
+    line-height: 1;
   }
   .about_container_grid {
     display: block;
@@ -1072,11 +1152,12 @@ body {
     @include BrandonBold(px2vw(10px, 375px));
     margin-top: px2vw(24px, 375px);
     margin-left: px2vw(24px, 375px);
-    line-height: 1.2;
+    line-height: 1;
   }
   .testimonials_mainBlock {
     width: 100%;
-    height: px2vw(640px, 375px);
+    margin-top: px2vw(24px, 375px);
+    height: px2vw(680px, 375px);
     padding: px2vw(64px, 375px) px2vw(24px, 375px) px2vw(148px, 375px)
       px2vw(24px, 375px);
 
@@ -1086,8 +1167,8 @@ body {
     }
     .slider .slide {
       img {
-        width: px2vw(327px, 375px);
-        height: px2vw(428px, 375px);
+        // width: 100%;
+        // height: 100%;
       }
     }
     .imgQoute_left {

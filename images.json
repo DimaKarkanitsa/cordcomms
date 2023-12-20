@@ -1,18 +1,18 @@
 [
   {
     "url": "./img/test-1.png",
-    "alt": "Mountains at dusk"
+    "alt": "test_img_1"
   },
   {
     "url": "./img/test-2.png",
-    "alt": "Mountain lake at sunset"
+    "alt": "test_img_2"
   },
   {
     "url": "./img/test-3.png",
-    "alt": "River through the mountains"
+    "alt": "test_img_3"
   },
   {
     "url": "./img/test-4.png",
-    "alt": "Mountain peak"
+    "alt": "test_img_4"
   }
 ]
