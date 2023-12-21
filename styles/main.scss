@@ -24,6 +24,7 @@ $color: #e7e6e0;
 
 body {
   width: 100vw;
+  line-height: normal;
   background-image: url(../img/bg_noise.png);
   background-color: $color;
   background-repeat: repeat;
@@ -458,6 +459,7 @@ body {
 .team {
   display: grid;
   width: 100%;
+  margin-top: px2vw(164px);
   padding-right: px2vw(240px);
   grid-template-columns: 1fr 4fr;
   column-gap: px2vw(100px);
@@ -508,6 +510,7 @@ body {
     grid-column: 2/3;
     width: 100%;
     margin: px2vw(100px) 0 px2vw(100px) 0;
+    z-index: 1;
   }
 }
 //section4
