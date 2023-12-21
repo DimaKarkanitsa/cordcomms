@@ -2,7 +2,40 @@ const slide = document.querySelector(".slide")
 const screenWidth = window.innerWidth
 const navIcon = document.querySelector(".navBar_icon")
 const navMenu = document.querySelector(".navBar_list")
-const link = document.querySelector(".link")
+const navLink = document.querySelectorAll(".link[data-goto]")
+console.log(navLink)
+if (navLink.length > 0) {
+  navLink.forEach((el) => {
+    el.addEventListener("click", onLinkClick)
+  })
+}
+function onLinkClick(e) {
+  const navLink = e.target
+  if (navLink.dataset.goto && document.querySelector(navLink.dataset.goto)) {
+    const gotoBlock = document.querySelector(navLink.dataset.goto)
+    const gotoBlockValue =
+      gotoBlock.getBoundingClientRect().top +
+      scrollY -
+      document.querySelector(".navBar").offsetHeight
+
+    window.scrollTo({
+      top: gotoBlockValue,
+      behavior: "smooth",
+    })
+    document.body.classList.toggle("_lock")
+    navMenu.classList.toggle("_show")
+    navIcon.classList.toggle("_active")
+    e.preventDefault()
+  }
+}
+
+navIcon.addEventListener("click", (e) => {
+  e.preventDefault()
+  document.body.classList.toggle("_lock")
+  navMenu.classList.toggle("_show")
+  navIcon.classList.toggle("_active")
+})
+
 const wideImages = [
   {
     url: "./img/test-1.png",
@@ -50,8 +83,6 @@ function moveSlides() {
   slide.style.transform = `translateX(-${slideIndex * 100}%)`
 }
 
-// move when clicked
-
 function moveHandler(direction) {
   isMoving = true
   slide.style.transition = `transform 450ms ease-in-out`
@@ -59,61 +90,18 @@ function moveHandler(direction) {
   moveSlides()
 }
 
-// fetch images
-// async function fetchImages() {
-//   await fetch("./images.json")
-//     .then((response) => {
-//       if (!response.ok) {
-//         throw new Error("Network response was not okay")
-//       }
-//       return response.json()
-//     })
-//     .then((data) => {
-//       // cloned first and last image
-//       data.push(data[0])
-//       data.unshift(data[data.length - 2])
-//       // show slider
-//       slide.innerHTML = data.map(processImages).join("")
-//       moveSlides()
-//     })
-//     .catch((error) => {
-//       console.error(
-//         "There has been a problem with your fetch operation:",
-//         error
-//       )
-//     })
-// }
 function fetchImages(narrowImages, wideImages) {
   let data = screenWidth < 600 ? narrowImages : wideImages
-  // cloned first and last image
+  console.log(data)
   data.push(data[0])
   data.unshift(data[data.length - 2])
-  // show slider
+
   slide.innerHTML = data.map(processImages).join("")
   moveSlides()
 }
 
 fetchImages(narrowImages, wideImages)
 
-// keyboard arrow handler
-// window.addEventListener("keyup", (e) => {
-//   if (isMoving) {
-//     return
-//   }
-//   switch (e.key) {
-//     case "ArrowLeft":
-//       moveHandler()
-//       break
-//     case "ArrowRight":
-//       moveHandler("right")
-//       break
-
-//     default:
-//       break
-//   }
-// })
-
-// click right btn
 document.querySelector(".slider__btn--right").addEventListener("click", () => {
   if (isMoving) {
     return
@@ -121,7 +109,6 @@ document.querySelector(".slider__btn--right").addEventListener("click", () => {
   moveHandler("right")
 })
 
-// click left btn
 document.querySelector(".slider__btn--left").addEventListener("click", () => {
   if (isMoving) {
     return
@@ -132,14 +119,7 @@ document.querySelector(".slider__btn--left").addEventListener("click", () => {
 slide.addEventListener("transitionend", () => {
   isMoving = false
   const slidesArray = [...slide.querySelectorAll("img")]
-  // root.style.setProperty(
-  //   "--slide-progress--transition",
-  //   `${
-  //     slideIndex === slidesArray.length - 1
-  //       ? "none"
-  //       : "all 400ms cubic-bezier(0.82, 0.02, 0.39, 1.01)"
-  //   }`
-  // )
+
   if (slideIndex === 0) {
     slide.style.transition = "none"
     slideIndex = slidesArray.length - 2
@@ -150,15 +130,4 @@ slide.addEventListener("transitionend", () => {
     slideIndex = 1
     moveSlides()
   }
-})
-
-navIcon.addEventListener("click", (event) => {
-  document.body.classList.toggle("_lock")
-  navMenu.classList.toggle("_show")
-  navIcon.classList.toggle("_active")
-})
-link.addEventListener("click", (event) => {
-  document.body.classList.toggle("_lock")
-  navMenu.classList.toggle("_show")
-  navIcon.classList.toggle("_active")
 })
