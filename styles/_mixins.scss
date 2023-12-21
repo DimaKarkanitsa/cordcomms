@@ -1,3 +1,0 @@
-@function px2vw($size, $dev: 1920px) {
-  @return calc(($size / $dev) * 100vw);
-}

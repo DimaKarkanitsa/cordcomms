@@ -3,7 +3,6 @@ const screenWidth = window.innerWidth
 const navIcon = document.querySelector(".navBar_icon")
 const navMenu = document.querySelector(".navBar_list")
 const navLink = document.querySelectorAll(".link[data-goto]")
-console.log(navLink)
 if (navLink.length > 0) {
   navLink.forEach((el) => {
     el.addEventListener("click", onLinkClick)
@@ -92,7 +91,6 @@ function moveHandler(direction) {
 
 function fetchImages(narrowImages, wideImages) {
   let data = screenWidth < 600 ? narrowImages : wideImages
-  console.log(data)
   data.push(data[0])
   data.unshift(data[data.length - 2])
 
