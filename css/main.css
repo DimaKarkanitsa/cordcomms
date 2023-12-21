@@ -85,6 +85,7 @@ body {
   flex-direction: column;
   align-items: center;
   padding: 0 8.3333333333vw;
+  overflow-x: hidden;
 }
 
 .sectionSeparator {
@@ -168,6 +169,7 @@ body {
 
 .header {
   margin: 15.625vw auto 7.6041666667vw auto;
+  overflow-x: hidden;
 }
 
 .circle1 {
@@ -197,6 +199,7 @@ body {
   width: 70.3125vw;
   margin: 0 auto;
   flex-wrap: nowrap;
+  z-index: 1;
 }
 .header_flex .flex_box1 {
   display: flex;
@@ -1079,9 +1082,11 @@ body {
   }
   .header_flex .flex_box1 .box1_text3 {
     width: 42.9333333333vw;
+    z-index: 3;
   }
   .header_flex .flex_box2 {
     width: 100%;
+    z-index: 3;
   }
   .header_flex .flex_box2 .box2_text5 {
     font-size: 13.0666666667vw;
@@ -1100,6 +1105,7 @@ body {
     color: #0e1822;
     font-weight: 400;
     line-height: 1;
+    z-index: 3;
   }
   .header_flex .flex_box4 {
     width: 100%;
@@ -1445,8 +1451,8 @@ body {
     grid-row: 2/3;
     width: 100%;
     display: grid;
-    grid-template-columns: 1fr 1fr;
-    grid-template-rows: repeat(2, auto);
+    grid-template-columns: auto auto;
+    grid-template-rows: repeat(2, 1fr);
     gap: 24px;
   }
   .footer .footer_text .footer_text1 {
