@@ -40,12 +40,12 @@ $fontSecondaryB: BG-Bold, sans-serif;
   line-height: 1.4;
   color: $mainBlack;
 }
-@mixin BrandonMedium($size) {
+@mixin BrandonMedium($size, $color: $secondBlack) {
   font-size: $size;
   font-family: $fontSecondaryM;
   font-weight: 420;
   line-height: 1.4;
-  color: $secondBlack;
+  color: $color;
 }
 @mixin BrandonBold($size) {
   font-size: $size;
