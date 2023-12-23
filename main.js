@@ -90,15 +90,20 @@ function moveHandler(direction) {
 }
 
 function fetchImages(narrowImages, wideImages) {
+  slide.innerHTML = ""
   let data = screenWidth < 600 ? narrowImages : wideImages
   data.push(data[0])
   data.unshift(data[data.length - 2])
-
   slide.innerHTML = data.map(processImages).join("")
   moveSlides()
 }
 
 fetchImages(narrowImages, wideImages)
+
+window.addEventListener("resize", function () {
+  "use strict"
+  window.location.reload()
+})
 
 document.querySelector(".slider__btn--right").addEventListener("click", () => {
   if (isMoving) {
