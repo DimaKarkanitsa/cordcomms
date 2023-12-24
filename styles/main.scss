@@ -867,7 +867,7 @@ body {
     left: 0;
     right: 0;
     width: 100%;
-    height: 72px;
+    height: px2vw(72px, 375px);
     z-index: 10;
   }
   .navBar_icon {
@@ -908,7 +908,7 @@ body {
   }
   .header {
     width: 100%;
-    margin-top: 228px;
+    margin-top: px2vw(228px, 375px);
     overflow-x: clip;
     overflow-y: visible;
     .ellipse1 {
