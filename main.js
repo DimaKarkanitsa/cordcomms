@@ -1,9 +1,14 @@
-const slide = document.querySelector(".slide")
 const screenWidth = window.innerWidth
+const navLink = document.querySelectorAll(".link[data-goto]")
+const slide = document.querySelector(".slide")
 const navIcon = document.querySelector(".navBar_icon")
 const navMenu = document.querySelector(".navBar_list")
-const navLink = document.querySelectorAll(".link[data-goto]")
-console.log(navLink)
+const header = document.querySelector("header")
+const main = document.querySelector("main")
+const filePath = ["./privacyDoc.html", "./termsDoc.html"]
+const innerDoc = document.querySelector(".innerDoc")
+
+const btns = document.querySelectorAll(".btn")
 if (navLink.length > 0) {
   navLink.forEach((el) => {
     el.addEventListener("click", onLinkClick)
@@ -11,6 +16,12 @@ if (navLink.length > 0) {
 }
 function onLinkClick(e) {
   const navLink = e.target
+  if (main.classList.contains("_hide")) {
+    header.classList.remove("_hide")
+    main.classList.remove("_hide")
+    innerDoc.innerHTML = ""
+  }
+
   if (navLink.dataset.goto && document.querySelector(navLink.dataset.goto)) {
     const gotoBlock = document.querySelector(navLink.dataset.goto)
     const gotoBlockValue =
@@ -92,7 +103,6 @@ function moveHandler(direction) {
 
 function fetchImages(narrowImages, wideImages) {
   let data = screenWidth < 600 ? narrowImages : wideImages
-  console.log(data)
   data.push(data[0])
   data.unshift(data[data.length - 2])
 
@@ -131,3 +141,39 @@ slide.addEventListener("transitionend", () => {
     moveSlides()
   }
 })
+
+//terms and privacy
+
+btns.forEach((btn) => {
+  btn.addEventListener("click", handleBtnClick)
+})
+
+function loadHTMLFile(filePath) {
+  fetch(filePath)
+    .then((response) => {
+      if (!response.ok) {
+        throw new Error(
+          `Failed to fetch file: ${response.status} ${response.statusText}`
+        )
+      }
+      return response.text()
+    })
+    .then((data) => {
+      document.querySelector(".innerDoc").innerHTML = data
+    })
+}
+
+function handleBtnClick(e) {
+  e.preventDefault()
+
+  if (e.target.classList.contains("terms")) {
+    header.classList.add("_hide")
+    main.classList.add("_hide")
+    loadHTMLFile(filePath[0])
+    console.log(document.querySelector(".innerDoc"))
+  } else if (e.target.classList.contains("privacy")) {
+    header.classList.add("_hide")
+    main.classList.add("_hide")
+    loadHTMLFile(filePath[1])
+  }
+}
