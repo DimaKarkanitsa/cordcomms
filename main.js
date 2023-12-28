@@ -1,25 +1,28 @@
-const screenWidth = window.innerWidth
-const navLink = document.querySelectorAll(".link[data-goto]")
-const slide = document.querySelector(".slide")
-const navIcon = document.querySelector(".navBar_icon")
-const navMenu = document.querySelector(".navBar_list")
-const header = document.querySelector("header")
-const main = document.querySelector("main")
-const filePath = ["./privacyDoc.html", "./termsDoc.html"]
-const innerDoc = document.querySelector(".innerDoc")
+import './termsDoc.html'
+import './privacyDoc.html'
 
-const btns = document.querySelectorAll(".btn")
+const screenWidth = window.innerWidth
+const navLink = document.querySelectorAll('.link[data-goto]')
+const slide = document.querySelector('.slide')
+const navIcon = document.querySelector('.navBar_icon')
+const navMenu = document.querySelector('.navBar_list')
+const header = document.querySelector('header')
+const main = document.querySelector('main')
+const filePath = ['./privacyDoc.html', './termsDoc.html']
+const innerDoc = document.querySelector('.innerDoc')
+const intLinks = document.querySelectorAll('.btn')
+
 if (navLink.length > 0) {
   navLink.forEach((el) => {
-    el.addEventListener("click", onLinkClick)
+    el.addEventListener('click', onLinkClick)
   })
 }
 function onLinkClick(e) {
   const navLink = e.target
-  if (main.classList.contains("_hide")) {
-    header.classList.remove("_hide")
-    main.classList.remove("_hide")
-    innerDoc.innerHTML = ""
+  if (main.classList.contains('_hide')) {
+    header.classList.remove('_hide')
+    main.classList.remove('_hide')
+    innerDoc.innerHTML = ''
   }
 
   if (navLink.dataset.goto && document.querySelector(navLink.dataset.goto)) {
@@ -27,60 +30,58 @@ function onLinkClick(e) {
     const gotoBlockValue =
       gotoBlock.getBoundingClientRect().top +
       scrollY -
-      document.querySelector(".navBar").offsetHeight
+      document.querySelector('.navBar').offsetHeight
 
     window.scrollTo({
       top: gotoBlockValue,
-      behavior: "smooth",
+      behavior: 'smooth',
     })
-    document.body.classList.toggle("_lock")
-    navMenu.classList.toggle("_show")
-    navIcon.classList.toggle("_active")
+    document.body.classList.toggle('_lock')
+    navMenu.classList.toggle('_show')
+    navIcon.classList.toggle('_active')
     e.preventDefault()
   }
 }
-
-navIcon.addEventListener("click", (e) => {
+navIcon.addEventListener('click', (e) => {
   e.preventDefault()
-  document.body.classList.toggle("_lock")
-  navMenu.classList.toggle("_show")
-  navIcon.classList.toggle("_active")
+  document.body.classList.toggle('_lock')
+  navMenu.classList.toggle('_show')
+  navIcon.classList.toggle('_active')
 })
-
 const wideImages = [
   {
-    url: "./img/test-1.png",
-    alt: "test_img_1",
+    url: './img/test-1.png',
+    alt: 'test_img_1',
   },
   {
-    url: "./img/test-2.png",
-    alt: "test_img_2",
+    url: './img/test-2.png',
+    alt: 'test_img_2',
   },
   {
-    url: "./img/test-3.png",
-    alt: "test_img_3",
+    url: './img/test-3.png',
+    alt: 'test_img_3',
   },
   {
-    url: "./img/test-4.png",
-    alt: "test_img_4",
+    url: './img/test-4.png',
+    alt: 'test_img_4',
   },
 ]
 const narrowImages = [
   {
-    url: "./img/test_mb-1.png",
-    alt: "test_img_1",
+    url: './img/test_mb-1.png',
+    alt: 'test_img_1',
   },
   {
-    url: "./img/test_mb-2.png",
-    alt: "test_img_2",
+    url: './img/test_mb-2.png',
+    alt: 'test_img_2',
   },
   {
-    url: "./img/test_mb-3.png",
-    alt: "test_img_3",
+    url: './img/test_mb-3.png',
+    alt: 'test_img_3',
   },
   {
-    url: "./img/test_mb-4.png",
-    alt: "test_img_4",
+    url: './img/test_mb-4.png',
+    alt: 'test_img_4',
   },
 ]
 let slideIndex = 1
@@ -97,7 +98,7 @@ function moveSlides() {
 function moveHandler(direction) {
   isMoving = true
   slide.style.transition = `transform 450ms ease-in-out`
-  direction !== "right" ? (slideIndex -= 1) : (slideIndex += 1)
+  direction !== 'right' ? (slideIndex -= 1) : (slideIndex += 1)
   moveSlides()
 }
 
@@ -106,37 +107,37 @@ function fetchImages(narrowImages, wideImages) {
   data.push(data[0])
   data.unshift(data[data.length - 2])
 
-  slide.innerHTML = data.map(processImages).join("")
+  slide.innerHTML = data.map(processImages).join('')
   moveSlides()
 }
 
 fetchImages(narrowImages, wideImages)
 
-document.querySelector(".slider__btn--right").addEventListener("click", () => {
+document.querySelector('.slider__btn--right').addEventListener('click', () => {
   if (isMoving) {
     return
   }
-  moveHandler("right")
+  moveHandler('right')
 })
 
-document.querySelector(".slider__btn--left").addEventListener("click", () => {
+document.querySelector('.slider__btn--left').addEventListener('click', () => {
   if (isMoving) {
     return
   }
   moveHandler()
 })
 
-slide.addEventListener("transitionend", () => {
+slide.addEventListener('transitionend', () => {
   isMoving = false
-  const slidesArray = [...slide.querySelectorAll("img")]
+  const slidesArray = [...slide.querySelectorAll('img')]
 
   if (slideIndex === 0) {
-    slide.style.transition = "none"
+    slide.style.transition = 'none'
     slideIndex = slidesArray.length - 2
     moveSlides()
   }
   if (slideIndex === slidesArray.length - 1) {
-    slide.style.transition = "none"
+    slide.style.transition = 'none'
     slideIndex = 1
     moveSlides()
   }
@@ -144,8 +145,8 @@ slide.addEventListener("transitionend", () => {
 
 //terms and privacy
 
-btns.forEach((btn) => {
-  btn.addEventListener("click", handleBtnClick)
+intLinks.forEach((btn) => {
+  btn.addEventListener('click', handleBtnClick)
 })
 
 function loadHTMLFile(filePath) {
@@ -156,24 +157,25 @@ function loadHTMLFile(filePath) {
           `Failed to fetch file: ${response.status} ${response.statusText}`
         )
       }
+      console.log(response)
       return response.text()
     })
     .then((data) => {
-      document.querySelector(".innerDoc").innerHTML = data
+      document.querySelector('.innerDoc').innerHTML = data
     })
 }
 
 function handleBtnClick(e) {
   e.preventDefault()
 
-  if (e.target.classList.contains("terms")) {
-    header.classList.add("_hide")
-    main.classList.add("_hide")
+  if (e.target.classList.contains('privacy')) {
+    header.classList.add('_hide')
+    main.classList.add('_hide')
     loadHTMLFile(filePath[0])
-    console.log(document.querySelector(".innerDoc"))
-  } else if (e.target.classList.contains("privacy")) {
-    header.classList.add("_hide")
-    main.classList.add("_hide")
+    console.log(document.querySelector('.innerDoc'))
+  } else if (e.target.classList.contains('terms')) {
+    header.classList.add('_hide')
+    main.classList.add('_hide')
     loadHTMLFile(filePath[1])
   }
 }

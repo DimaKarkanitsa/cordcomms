@@ -1,6 +1,8 @@
 @import "./_globals.scss";
 @import "./_variables.scss";
 @import "./_mixins.scss";
+@import "./_privacyDoc.scss";
+@import "./_termsDoc.scss";
 
 @mixin title {
   @include BrandonBold(px2vw(16px));
@@ -819,9 +821,7 @@ body {
   ._lock {
     overflow: hidden;
   }
-  // ._hide {
-  //   display: none;
-  // }
+
   .navBar {
     display: block;
     width: 100%;
