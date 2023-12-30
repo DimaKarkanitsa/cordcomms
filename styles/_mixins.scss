@@ -1,3 +1,18 @@
 @function px2vw($size, $dev: 1920px) {
   @return calc(($size / $dev) * 100vw);
 }
+@mixin title {
+  @include BrandonBold(px2vw(16px));
+  margin-top: px2vw(40px);
+  line-height: 1.5;
+  margin-left: px2vw(40px);
+}
+@mixin titleMobile {
+  @include BrandonBold(px2vw(10px, 375px));
+  margin-top: 24px;
+  line-height: 1.5;
+  margin-left: 24px;
+}
+@mixin border {
+  border: 1px solid $mainBlack;
+}

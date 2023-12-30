@@ -1,6 +1,3 @@
-import './termsDoc.html'
-import './privacyDoc.html'
-
 const screenWidth = window.innerWidth
 const navLink = document.querySelectorAll('.link[data-goto]')
 const slide = document.querySelector('.slide')
@@ -12,11 +9,14 @@ const filePath = ['./privacyDoc.html', './termsDoc.html']
 const innerDoc = document.querySelector('.innerDoc')
 const intLinks = document.querySelectorAll('.btn')
 
+// window.addEventListener('resize', () => window.location.reload())
+
 if (navLink.length > 0) {
   navLink.forEach((el) => {
     el.addEventListener('click', onLinkClick)
   })
 }
+
 function onLinkClick(e) {
   const navLink = e.target
   if (main.classList.contains('_hide')) {
@@ -30,7 +30,7 @@ function onLinkClick(e) {
     const gotoBlockValue =
       gotoBlock.getBoundingClientRect().top +
       scrollY -
-      document.querySelector('.navBar').offsetHeight
+      document.querySelector('.navBar').offsetHeight / 2
 
     window.scrollTo({
       top: gotoBlockValue,
@@ -157,7 +157,6 @@ function loadHTMLFile(filePath) {
           `Failed to fetch file: ${response.status} ${response.statusText}`
         )
       }
-      console.log(response)
       return response.text()
     })
     .then((data) => {
@@ -167,15 +166,20 @@ function loadHTMLFile(filePath) {
 
 function handleBtnClick(e) {
   e.preventDefault()
-
+  const navLink = e.target
   if (e.target.classList.contains('privacy')) {
     header.classList.add('_hide')
     main.classList.add('_hide')
     loadHTMLFile(filePath[0])
-    console.log(document.querySelector('.innerDoc'))
+    window.scrollTo({
+      top: 0,
+    })
   } else if (e.target.classList.contains('terms')) {
     header.classList.add('_hide')
     main.classList.add('_hide')
     loadHTMLFile(filePath[1])
+    window.scrollTo({
+      top: 0,
+    })
   }
 }
