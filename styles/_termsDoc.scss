@@ -8,14 +8,14 @@
 
   .title_box {
     width: 100%;
-    height: px2vw(104px);
     margin: px2vw(284px) 0 0 0;
     border-top: 1px solid $mainBlack;
     border-bottom: 1px solid $mainBlack;
     .title {
       @include title;
       font-size: 1rem;
-      margin-left: px2vw(200px);
+      padding-left: px2vw(200px);
+      padding-bottom: px2vw(40px);
     }
   }
   .terms_main {
@@ -59,4 +59,47 @@
 }
 .sectionSeparator {
   margin-top: 84px;
+}
+@media (max-width: 725px) {
+  h3 {
+    font-size: 1.5rem;
+    margin-bottom: 0;
+    margin-top: 40px;
+    line-height: 1.1;
+  }
+  .dottedLine {
+    margin-top: 40px;
+  }
+  .terms {
+    padding: 0 20px;
+    position: relative;
+    .title_box {
+      position: absolute;
+      margin: 154px 0 0 0;
+      .title {
+        @include titleMobile;
+        padding-bottom: 24px;
+      }
+    }
+    .terms_main {
+      width: 100%;
+      margin: 276px 0;
+      .text1 {
+        font-size: 1rem;
+        margin-top: 8px;
+      }
+      .terms_block {
+        padding-top: 0;
+        h3 {
+          font-size: 1.5rem;
+          margin-bottom: 0;
+          margin-top: 40px;
+          line-height: 1.1;
+        }
+        .line_a::before {
+          left: -20px;
+        }
+      }
+    }
+  }
 }
