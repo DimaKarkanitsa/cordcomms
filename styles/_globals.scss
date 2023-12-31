@@ -1,4 +1,4 @@
-@import url("https://cdnjs.cloudflare.com/ajax/libs/meyer-reset/2.0/reset.min.css");
+@import url('https://cdnjs.cloudflare.com/ajax/libs/meyer-reset/2.0/reset.min.css');
 
 * {
   -webkit-font-smoothing: antialiased;
@@ -29,28 +29,28 @@ a {
 
 @font-face {
   font-family: BG-Regular;
-  src: url("../fonts/BrandonGrotesque_regular.otf") format("opentype");
+  src: url('../fonts/BrandonGrotesque_regular.otf') format('opentype');
   font-weight: 390;
 }
 @font-face {
   font-family: BG-Medium;
-  src: url("../fonts/BrandonGrotesque_medium.otf") format("opentype");
+  src: url('../fonts/BrandonGrotesque_medium.otf') format('opentype');
 
   font-weight: 420;
 }
 @font-face {
   font-family: BG-Bold;
-  src: url("../fonts/BrandonGrotesque_bold.otf") format("opentype");
+  src: url('../fonts/BrandonGrotesque_bold.otf') format('opentype');
   font-weight: 450;
 }
 
 @font-face {
   font-family: CG-Regular;
-  src: url("../fonts/CormorantGaramond-Regular.ttf") format("truetype");
+  src: url('../fonts/CormorantGaramond-Regular.ttf') format('truetype');
   font-weight: 400;
 }
 @font-face {
   font-family: CG-SemiBold;
-  src: url("../fonts/CormorantGaramond-SemiBold.ttf") format("truetype");
+  src: url('../fonts/CormorantGaramond-SemiBold.ttf') format('truetype');
   font-weight: 600;
 }

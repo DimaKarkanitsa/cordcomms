@@ -167,14 +167,14 @@ function loadHTMLFile(filePath) {
 function handleBtnClick(e) {
   e.preventDefault()
   const navLink = e.target
-  if (e.target.classList.contains('privacy')) {
+  if (e.target.classList.contains('privacy_link')) {
     header.classList.add('_hide')
     main.classList.add('_hide')
     loadHTMLFile(filePath[0])
     window.scrollTo({
       top: 0,
     })
-  } else if (e.target.classList.contains('terms')) {
+  } else if (e.target.classList.contains('terms_link')) {
     header.classList.add('_hide')
     main.classList.add('_hide')
     loadHTMLFile(filePath[1])

@@ -10,6 +10,7 @@
 }
 .text2 {
   @include BrandonMedium(24px);
+  margin-top: 24px;
 }
 .privacy {
   display: flex;
@@ -28,8 +29,8 @@
       height: 100%;
       @include title;
       font-size: 1rem;
-      margin-left: px2vw(200px);
-      margin-bottom: px2vw(40px);
+      padding-left: px2vw(200px);
+      padding-bottom: px2vw(40px);
     }
   }
   .privacy_main {
@@ -38,7 +39,7 @@
     .text1 {
       @include BrandonRegular(24px);
       line-height: 1.25;
-      margin: 10px 0;
+      margin-top: 10px;
     }
 
     .privacy_block {
@@ -51,6 +52,10 @@
         margin-bottom: px2vw(20px);
         @include CormorantSemiBold(4rem);
         line-height: 1.2;
+      }
+      .text_num {
+        margin-top: 20px;
+        padding: 0;
       }
       .line_a {
         position: relative;
@@ -68,13 +73,35 @@
     }
   }
 }
+.grid_parent2 {
+  margin: 20px 0 0 0;
+  width: 100%;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  column-gap: 40px;
+  .data3 {
+    @include BrandonMedium(24px);
+  }
+
+  .data2 {
+    @include BrandonMedium(24px);
+    grid-column: 1/2;
+  }
+  .grid_text2 {
+    width: 100%;
+    grid-column: 2/8;
+  }
+  .dottedLine_a {
+    height: 40px;
+    grid-column: 1/8;
+  }
+}
 .grid_parent {
   margin: 20px 0 0 0;
   width: 100%;
   display: grid;
   grid-template-columns: 20% 40%;
   column-gap: 40px;
-
   .data {
     @include BrandonMedium(24px);
     grid-column: 1/2;
@@ -88,30 +115,69 @@
     grid-column: 1/8;
   }
 }
-@media (max-width: 600px) {
+@media (max-width: 725px) {
   h3 {
     font-size: 1.5rem;
   }
   .privacy {
     padding: 0 20px;
+    position: relative;
     .title_box {
+      position: absolute;
+      margin: 154px 0 0 0;
       .title {
-        padding: px2vw(40px) auto px2vw(40px) px2vw(40px);
+        @include titleMobile;
+        padding-bottom: 24px;
       }
     }
     .privacy_main {
       width: 100%;
-      margin: 104px 0;
+      margin: 276px 0;
       .text1 {
         font-size: 1rem;
+        margin-top: 8px;
+      }
+      .text2 {
+        font-size: 1.2rem;
       }
       .dottedLine {
-        margin-top: 100px;
+        margin-top: 40px;
       }
       .privacy_block {
-        padding-top: 100px;
+        padding-top: 40px;
+
         h3 {
-          font-size: 2rem;
+          font-size: 1.5rem;
+          margin-bottom: 0;
+        }
+        .grid_parent {
+          display: block;
+          .data {
+            font-size: 1rem;
+          }
+          .grid_text {
+            width: 100%;
+            margin: 8px 0 0 0;
+          }
+          .dottedLine_a {
+            margin-top: 20px;
+          }
+        }
+        .grid_parent2 {
+          column-gap: 20px;
+          .data3 {
+            font-size: 1rem;
+          }
+          .data2 {
+            font-size: 1rem;
+          }
+          .grid_text2 {
+            width: 100%;
+            margin: 0;
+          }
+          .dottedLine_a {
+            margin-top: 20px;
+          }
         }
       }
     }
