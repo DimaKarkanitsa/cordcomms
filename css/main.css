@@ -419,6 +419,7 @@ body {
   background-color: #e7e6e0;
   background-repeat: repeat;
   position: relative;
+  overflow-x: hidden;
 }
 
 .mb {

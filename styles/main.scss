@@ -23,6 +23,7 @@ body {
   background-color: $color;
   background-repeat: repeat;
   position: relative;
+  overflow-x: hidden;
 }
 
 .mb {
