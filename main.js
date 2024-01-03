@@ -8,46 +8,6 @@ const main = document.querySelector('main')
 const filePath = ['./privacyDoc.html', './termsDoc.html']
 const innerDoc = document.querySelector('.innerDoc')
 const intLinks = document.querySelectorAll('.btn')
-
-window.addEventListener('resize', () => window.location.reload())
-
-if (navLink.length > 0) {
-  navLink.forEach((el) => {
-    el.addEventListener('click', onLinkClick)
-  })
-}
-
-function onLinkClick(e) {
-  const navLink = e.target
-  if (main.classList.contains('_hide')) {
-    header.classList.remove('_hide')
-    main.classList.remove('_hide')
-    innerDoc.innerHTML = ''
-  }
-
-  if (navLink.dataset.goto && document.querySelector(navLink.dataset.goto)) {
-    const gotoBlock = document.querySelector(navLink.dataset.goto)
-    const gotoBlockValue =
-      gotoBlock.getBoundingClientRect().top +
-      scrollY -
-      document.querySelector('.navBar').offsetHeight / 2
-
-    window.scrollTo({
-      top: gotoBlockValue,
-      behavior: 'smooth',
-    })
-    document.body.classList.toggle('_lock')
-    navMenu.classList.toggle('_show')
-    navIcon.classList.toggle('_active')
-    e.preventDefault()
-  }
-}
-navIcon.addEventListener('click', (e) => {
-  e.preventDefault()
-  document.body.classList.toggle('_lock')
-  navMenu.classList.toggle('_show')
-  navIcon.classList.toggle('_active')
-})
 const wideImages = [
   {
     url: './img/test-1.png',
@@ -87,31 +47,26 @@ const narrowImages = [
 let slideIndex = 1
 let isMoving = false
 
-function processImages(item) {
-  return `<img src="${item.url}" alt="${item.alt}">`
+//Event Listeners
+
+window.addEventListener('resize', () => window.location.reload())
+
+if (navLink.length > 0) {
+  navLink.forEach((el) => {
+    el.addEventListener('click', onLinkClick)
+  })
 }
 
-function moveSlides() {
-  slide.style.transform = `translateX(-${slideIndex * 100}%)`
-}
+navIcon.addEventListener('click', (e) => {
+  e.preventDefault()
+  document.body.classList.toggle('_lock')
+  navMenu.classList.toggle('_show')
+  navIcon.classList.toggle('_active')
+})
 
-function moveHandler(direction) {
-  isMoving = true
-  slide.style.transition = `transform 450ms ease-in-out`
-  direction !== 'right' ? (slideIndex -= 1) : (slideIndex += 1)
-  moveSlides()
-}
-
-function fetchImages(narrowImages, wideImages) {
-  let data = screenWidth < 600 ? narrowImages : wideImages
-  data.push(data[0])
-  data.unshift(data[data.length - 2])
-
-  slide.innerHTML = data.map(processImages).join('')
-  moveSlides()
-}
-
-fetchImages(narrowImages, wideImages)
+intLinks.forEach((btn) => {
+  btn.addEventListener('click', handleBtnClick)
+})
 
 document.querySelector('.slider__btn--right').addEventListener('click', () => {
   if (isMoving) {
@@ -143,11 +98,56 @@ slide.addEventListener('transitionend', () => {
   }
 })
 
-//terms and privacy
+//Functions
+function onLinkClick(e) {
+  const navLink = e.target
+  if (main.classList.contains('_hide')) {
+    header.classList.remove('_hide')
+    main.classList.remove('_hide')
+    innerDoc.innerHTML = ''
+  }
 
-intLinks.forEach((btn) => {
-  btn.addEventListener('click', handleBtnClick)
-})
+  if (navLink.dataset.goto && document.querySelector(navLink.dataset.goto)) {
+    const gotoBlock = document.querySelector(navLink.dataset.goto)
+    const gotoBlockValue =
+      gotoBlock.getBoundingClientRect().top +
+      scrollY -
+      document.querySelector('.navBar').offsetHeight / 2
+
+    window.scrollTo({
+      top: gotoBlockValue,
+      behavior: 'smooth',
+    })
+    document.body.classList.toggle('_lock')
+    navMenu.classList.toggle('_show')
+    navIcon.classList.toggle('_active')
+    e.preventDefault()
+  }
+}
+
+function processImages(item) {
+  return `<img src="${item.url}" alt="${item.alt}">`
+}
+
+function moveSlides() {
+  slide.style.transform = `translateX(-${slideIndex * 100}%)`
+}
+
+function moveHandler(direction) {
+  isMoving = true
+  slide.style.transition = `transform 450ms ease-in-out`
+  direction !== 'right' ? (slideIndex -= 1) : (slideIndex += 1)
+  moveSlides()
+}
+
+function fetchImages(narrowImages, wideImages) {
+  let data = screenWidth < 600 ? narrowImages : wideImages
+  data.push(data[0])
+  data.unshift(data[data.length - 2])
+
+  slide.innerHTML = data.map(processImages).join('')
+  moveSlides()
+}
 
 function loadHTMLFile(filePath) {
   fetch(filePath)
@@ -183,3 +183,5 @@ function handleBtnClick(e) {
     })
   }
 }
+
+fetchImages(narrowImages, wideImages)
