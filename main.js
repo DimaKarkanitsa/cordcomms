@@ -9,8 +9,6 @@ const filePath = ['./privacyDoc.html', './termsDoc.html']
 const innerDoc = document.querySelector('.innerDoc')
 const intLinks = document.querySelectorAll('.btn')
 
-window.addEventListener('resize', () => window.location.reload())
-
 if (navLink.length > 0) {
   navLink.forEach((el) => {
     el.addEventListener('click', onLinkClick)
