@@ -231,7 +231,7 @@ a {
     margin-top: 8px;
   }
   .privacy .privacy_main .text2 {
-    font-size: 1.2rem;
+    font-size: 1rem;
   }
   .privacy .privacy_main .dottedLine {
     margin-top: 40px;
@@ -1325,7 +1325,9 @@ body {
   }
   .navBar .navBar_list .navBar_media_icons {
     display: flex;
-    gap: 40px;
+    gap: 4%;
+    width: 40%;
+    height: 100%;
   }
   .navBar ._show {
     display: grid;
